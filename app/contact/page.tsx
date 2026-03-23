@@ -19,7 +19,33 @@ export default function Contact() {
         subtitle="In 45 minutes, we'll map out your platform, identify your opportunities, and show you exactly what Notable can build for you. No pressure — just clarity."
       />
 
-      {/* MAIN CONTACT */}
+      {/* CALENDAR EMBED */}
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="block w-4 h-px bg-crimson" />
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Schedule Your Call</span>
+          </div>
+          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3"
+            style={{ fontSize: "clamp(28px,3.5vw,44px)" }}>
+            Pick a Time That <em className="font-display font-normal italic text-crimson">Works.</em>
+          </h2>
+          <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-8 max-w-[500px]">
+            Discovery calls are 45 minutes and completely free. Select a time below and we&apos;ll send you a confirmation.
+          </p>
+          <div className="w-full overflow-hidden rounded border border-warm">
+            <iframe
+              src="https://calendar.google.com/appointments/schedules/AcZssZ16U0nZ-y5Kg12mv8jurlA97zY707orMic8_i9tbvK3sQ6qIBtP11rouFSrCka1N5gb2EReVBxX"
+              style={{ border: 0 }}
+              width="100%"
+              height="600"
+              title="Book a Discovery Call"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT INFO + FORM */}
       <section className="bg-bone py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
 
@@ -69,7 +95,10 @@ export default function Contact() {
           </div>
 
           {/* Right — form */}
-          <ContactForm />
+          <div>
+            <div className="text-[10px] font-semibold tracking-[3px] uppercase text-mauve mb-4">Or Send Us a Message</div>
+            <ContactForm />
+          </div>
         </div>
       </section>
     </div>

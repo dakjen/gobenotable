@@ -7,7 +7,7 @@ export default function Home() {
       {/* HERO */}
       <section className="bg-ink min-h-[calc(100vh-94px)] flex items-center justify-center px-6 md:px-16 py-20 relative overflow-hidden mt-[36px]">
         {/* Background image */}
-        <Image src="/images/hero-silhouette.jpg" alt="" fill className="object-cover object-center opacity-50 pointer-events-none" sizes="100vw" />
+        <Image src="/images/hero-silhouette.jpg" alt="" fill className="object-cover object-center opacity-[0.55] pointer-events-none" sizes="100vw" />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-ink/40 pointer-events-none" />
 

@@ -5,12 +5,16 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="bg-ink min-h-[calc(100vh-94px)] grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-6 md:px-16 pt-10 pb-16 relative overflow-hidden mt-[36px]">
-        {/* glow */}
+      <section className="bg-ink min-h-[calc(100vh-94px)] flex items-center justify-center px-6 md:px-16 py-20 relative overflow-hidden mt-[36px]">
+        {/* Background image */}
+        <Image src="/images/hero-silhouette.jpg" alt="" fill className="object-cover object-top opacity-15 pointer-events-none" sizes="100vw" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-ink/60 pointer-events-none" />
+        {/* Crimson glow */}
         <div className="absolute w-[500px] h-[500px] rounded-full top-[-150px] right-[-80px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(139,26,52,0.12) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(139,26,52,0.15) 0%, transparent 70%)" }} />
 
-        <div className="relative z-10">
+        <div className="relative z-10 max-w-3xl">
           <div className="flex items-center gap-3 mb-7">
             <span className="block w-6 h-px bg-crimson" />
             <span className="text-[10px] font-medium tracking-[4px] uppercase text-crimson">
@@ -23,42 +27,35 @@ export default function Home() {
             Go Be<br />
             <em className="font-display font-normal italic text-crimson">Notable.</em>
           </h1>
-          <p className="font-sans font-light text-[#333] tracking-wide text-lg mb-7 fade-up-delay-2">
+          <p className="font-sans font-light text-[#999] tracking-wide text-lg mb-7 fade-up-delay-2">
             We&apos;ll Do The Rest.
           </p>
 
-          <p className="font-sans font-light text-[#444] leading-[1.85] max-w-[440px] mb-9 text-[15px] fade-up-delay-3">
+          <p className="font-sans font-light text-[#aaa] leading-[1.85] max-w-[480px] mb-9 text-[15px] fade-up-delay-3">
             For high-performing women founders and executives who are done being
             the best-kept secret in their industry. We build the brand, the
             platform, and the revenue streams that make you impossible to overlook.
           </p>
 
-          <div className="flex gap-3 flex-wrap fade-up-delay-4">
+          <div className="flex gap-3 flex-wrap mb-12 fade-up-delay-4">
             <Link href="/contact"
               className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
               Book a Discovery Call
             </Link>
             <Link href="/essentials"
-              className="bg-transparent border border-[#2a2a2a] text-[#444] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
+              className="bg-transparent border border-[#333] text-[#999] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
               See Services
             </Link>
           </div>
-        </div>
 
-        {/* Hero image + stats */}
-        <div className="hidden md:flex flex-col gap-5 items-end justify-end relative z-10">
-          <div className="relative w-full max-w-[400px] aspect-[3/4] mb-5 overflow-hidden">
-            <Image src="/images/hero-silhouette.jpg" alt="Woman founder silhouette" fill className="object-cover object-top" sizes="400px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
-          </div>
-          <div className="border border-[#1e1e1e] p-8 flex flex-col gap-6 w-full max-w-[340px]">
+          <div className="flex gap-8 md:gap-12 flex-wrap">
             {[
               { n: "$1K",  l: "Starting Point" },
               { n: "6–8", l: "Week Amplify Build" },
               { n: "3",   l: "Service Tiers" },
             ].map((s) => (
               <div key={s.l} className="border-l-2 border-crimson pl-4">
-                <div className="font-display font-bold text-white text-[36px] leading-none">{s.n}</div>
+                <div className="font-display font-bold text-white text-[28px] leading-none">{s.n}</div>
                 <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#888] mt-1">{s.l}</div>
               </div>
             ))}

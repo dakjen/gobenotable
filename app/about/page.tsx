@@ -124,7 +124,7 @@ export default function About() {
           <div className="flex flex-col">
             {diffs.map((d) => (
               <div key={d.n} className="flex gap-5 items-start py-6 border-b border-warm first:border-t">
-                <span className="font-display font-normal italic text-warm text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{d.n}</span>
+                <span className="font-display font-normal italic text-mid text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{d.n}</span>
                 <div>
                   <div className="text-[14px] font-semibold text-ink mb-1.5">{d.t}</div>
                   <div className="text-[13px] font-light text-[#444] leading-[1.75]">{d.b}</div>
@@ -148,11 +148,40 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-[#1a1a1a]">
             {phases.map((p) => (
               <div key={p.n} className="bg-[#111] p-8">
-                <div className="font-display font-bold text-[#1e1e1e] text-[48px] leading-none mb-3">{p.n}</div>
+                <div className="font-display font-bold text-[#444] text-[48px] leading-none mb-3">{p.n}</div>
                 <div className="text-[11px] font-semibold tracking-[2.5px] uppercase text-crimson mb-3">{p.t}</div>
                 <div className="text-[13px] font-light text-[#444] leading-[1.75]">{p.b}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* THE FOUNDER */}
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-center">
+          <div className="relative w-full max-w-[280px] aspect-[3/4] overflow-hidden mx-auto md:mx-0">
+            <Image src="/images/founder-blazer.jpg" alt="DakotahJennifer — Founder of Notable" fill className="object-cover object-top" sizes="280px" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="block w-4 h-px bg-crimson" />
+              <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">The Founder</span>
+            </div>
+            <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-2" style={{ fontSize:"clamp(28px,3.5vw,42px)" }}>
+              DakotahJennifer
+            </h2>
+            <p className="text-[10px] font-semibold tracking-[3px] uppercase text-mauve mb-5">Founder &amp; Creative Director · DakJen Creative LLC</p>
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">
+              Notable was born because I kept seeing the same thing — brilliant women who had built real businesses, real impact, and real expertise, but whose brands looked nothing like the caliber of work they were doing. They were winning contracts, leading teams, and changing industries — but their online presence told a completely different story.
+            </p>
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">
+              I founded Notable to close that gap. Not with another logo refresh or a pretty website — but with a full brand, platform, and revenue strategy that finally matches who they actually are and where they&apos;re headed.
+            </p>
+            <p className="text-[15px] font-normal text-ink leading-[1.9]">
+              If you&apos;ve done the work, your brand should prove it.{" "}
+              <em className="italic text-crimson">That&apos;s what we&apos;re here for.</em>
+            </p>
           </div>
         </div>
       </section>

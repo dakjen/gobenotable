@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="bg-ink min-h-[calc(100vh-94px)] grid grid-cols-1 md:grid-cols-2 items-end gap-10 px-6 md:px-16 pt-16 pb-16 relative overflow-hidden mt-[36px]">
+      <section className="bg-ink min-h-[calc(100vh-94px)] grid grid-cols-1 md:grid-cols-2 items-center gap-10 px-6 md:px-16 pt-10 pb-16 relative overflow-hidden mt-[36px]">
         {/* glow */}
         <div className="absolute w-[500px] h-[500px] rounded-full top-[-150px] right-[-80px] pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(139,26,52,0.12) 0%, transparent 70%)" }} />
@@ -59,7 +59,7 @@ export default function Home() {
             ].map((s) => (
               <div key={s.l} className="border-l-2 border-crimson pl-4">
                 <div className="font-display font-bold text-white text-[36px] leading-none">{s.n}</div>
-                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#555] mt-1">{s.l}</div>
+                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#888] mt-1">{s.l}</div>
               </div>
             ))}
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 { n: "03", t: "Built for One Client", b: "The high-performing woman founder. We know her challenges and what it takes to get her seen." },
               ].map((d) => (
                 <div key={d.n} className="flex gap-5 items-start py-5 border-b border-warm first:border-t">
-                  <span className="font-display font-normal italic text-warm text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{d.n}</span>
+                  <span className="font-display font-normal italic text-mid text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{d.n}</span>
                   <div>
                     <div className="text-[13px] font-semibold text-ink mb-1">{d.t}</div>
                     <div className="text-[12px] font-light text-[#444] leading-[1.75]">{d.b}</div>
@@ -203,13 +203,13 @@ export default function Home() {
               {t.name}
             </div>
             <div className={`w-7 h-[1.5px] bg-crimson mb-5`} />
-            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${t.dark ? "text-[#555]" : "text-[#444]"}`}>
+            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${t.dark ? "text-[#888]" : "text-[#444]"}`}>
               {t.desc}
             </p>
             <div className={`text-[26px] font-bold mb-1 ${t.dark ? "text-white" : "text-crimson"}`}>
               {t.price}
             </div>
-            <div className={`text-[10px] mb-7 ${t.dark ? "text-[#555]" : "text-mid"}`}>
+            <div className={`text-[10px] mb-7 ${t.dark ? "text-[#888]" : "text-mid"}`}>
               {t.note}
             </div>
             <Link href={t.href}

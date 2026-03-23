@@ -58,7 +58,7 @@ export default function Vanguard() {
         {/* Hero image + Standards preview */}
         <div className="hidden md:flex flex-col gap-5 items-end justify-end relative z-10">
           <div className="relative w-full max-w-[400px] aspect-[3/4] mb-5 overflow-hidden">
-            <Image src="/images/vanguard-collab.jpg" alt="Two men in suits collaborating" fill className="object-cover object-top" sizes="400px" />
+            <Image src="/images/vanguard-stride.jpg" alt="Man walking with briefcase" fill className="object-cover object-top" sizes="400px" />
             <div className="absolute inset-0 bg-gradient-to-t from-navydark via-transparent to-transparent" />
           </div>
         <div className="border border-[#1a2540] p-8 w-full max-w-[400px]">
@@ -109,7 +109,7 @@ export default function Vanguard() {
           </div>
           <div>
             <div className="relative w-full aspect-[4/3] mb-7 overflow-hidden">
-              <Image src="/images/vanguard-executive.jpg" alt="Executive man looking out window" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/vanguard-executive.jpg" alt="Executive man looking out window" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="relative bg-navymid p-6 pl-7 mb-7">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-navy leading-none opacity-15 select-none">&ldquo;</span>
@@ -175,7 +175,7 @@ export default function Vanguard() {
           </div>
           <div>
             <div className="relative w-full aspect-[4/3] mb-7 overflow-hidden">
-              <Image src="/images/vanguard-stride.jpg" alt="Man walking with briefcase" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/vanguard-collab.jpg" alt="Two men in suits collaborating" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="flex flex-col">
               {forList.map(item => (

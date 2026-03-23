@@ -10,9 +10,6 @@ export default function Home() {
         <Image src="/images/hero-silhouette.jpg" alt="" fill className="object-cover object-center opacity-50 pointer-events-none" sizes="100vw" />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-ink/40 pointer-events-none" />
-        {/* Crimson glow */}
-        <div className="absolute w-[500px] h-[500px] rounded-full top-[-150px] right-[-80px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(139,26,52,0.15) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 max-w-3xl">
           <div className="flex items-center gap-3 mb-7">

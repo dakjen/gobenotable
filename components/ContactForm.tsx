@@ -20,13 +20,9 @@ export default function ContactForm() {
         <label className={l}>What Service Are You Interested In?</label>
         <select className={f}>
           <option value="" disabled>Select a service</option>
-          <option>Notable Essentials — Ready 2 Roll ($1,000)</option>
-          <option>Notable Essentials — Get Loud ($1,750)</option>
-          <option>Notable Essentials — Marquis ($3,000)</option>
-          <option>LinkedIn Voice Intensive (From $1,500)</option>
-          <option>Notable Amplify (Custom — From $8,000)</option>
-          <option>Notable Amplify+ Ongoing ($3,000–$5,000/mo)</option>
-          <option>Notable Vanguard</option>
+          <option>Notable Essentials</option>
+          <option>Notable Amplify</option>
+          <option>Notable Vanguard (Men only — application required)</option>
           <option>Not sure — I need guidance</option>
         </select>
       </div>

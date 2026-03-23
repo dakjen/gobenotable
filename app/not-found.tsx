@@ -19,7 +19,7 @@ export default function NotFound() {
             This page doesn&apos;t exist.{" "}
             <em className="font-display font-normal italic text-crimson">Yet.</em>
           </h1>
-          <p className="text-[14px] font-light text-[#555] max-w-[380px] mx-auto leading-[1.8] mb-8">
+          <p className="text-[14px] font-light text-[#333] max-w-[380px] mx-auto leading-[1.8] mb-8">
             But your platform could. Let&apos;s build something worth finding.
           </p>
           <Link href="/"

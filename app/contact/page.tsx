@@ -20,7 +20,7 @@ export default function Contact() {
       />
 
       {/* MAIN CONTACT */}
-      <section className="bg-bone py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-bone py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
 
           {/* Left */}
@@ -35,7 +35,7 @@ export default function Contact() {
               <em className="font-display font-normal italic text-crimson">Building.</em>
             </h2>
             <div className="w-8 h-0.5 bg-crimson my-5" />
-            <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-10">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-10">
               On your discovery call, we&apos;ll spend time understanding your business, your goals, and where you are right now. We&apos;ll tell you exactly what we&apos;d recommend building and why.
             </p>
 
@@ -46,7 +46,7 @@ export default function Contact() {
                   <span className="font-display font-normal italic text-warm text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{s.n}</span>
                   <div>
                     <div className="text-[13px] font-semibold text-ink mb-1">{s.t}</div>
-                    <div className="text-[12px] font-light text-[#666] leading-[1.65]">{s.b}</div>
+                    <div className="text-[12px] font-light text-[#444] leading-[1.65]">{s.b}</div>
                   </div>
                 </div>
               ))}

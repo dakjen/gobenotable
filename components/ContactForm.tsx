@@ -42,7 +42,7 @@ export default function ContactForm() {
         ) : (
           <div className="flex items-center gap-3 flex-wrap">
             <div className="bg-[#333] text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5">Request Received ✓</div>
-            <p className="text-[12px] font-light text-[#666] italic">We&apos;ll be in touch within 24 hours.</p>
+            <p className="text-[12px] font-light text-[#444] italic">We&apos;ll be in touch within 24 hours.</p>
           </div>
         )}
       </div>

@@ -23,11 +23,11 @@ export default function Home() {
             Go Be<br />
             <em className="font-display font-normal italic text-crimson">Notable.</em>
           </h1>
-          <p className="font-sans font-light text-[#555] tracking-wide text-lg mb-7 fade-up-delay-2">
+          <p className="font-sans font-light text-[#333] tracking-wide text-lg mb-7 fade-up-delay-2">
             We&apos;ll Do The Rest.
           </p>
 
-          <p className="font-sans font-light text-[#666] leading-[1.85] max-w-[440px] mb-9 text-[15px] fade-up-delay-3">
+          <p className="font-sans font-light text-[#444] leading-[1.85] max-w-[440px] mb-9 text-[15px] fade-up-delay-3">
             For high-performing women founders and executives who are done being
             the best-kept secret in their industry. We build the brand, the
             platform, and the revenue streams that make you impossible to overlook.
@@ -39,7 +39,7 @@ export default function Home() {
               Book a Discovery Call
             </Link>
             <Link href="/essentials"
-              className="bg-transparent border border-[#2a2a2a] text-[#666] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
+              className="bg-transparent border border-[#2a2a2a] text-[#444] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
               See Services
             </Link>
           </div>
@@ -59,7 +59,7 @@ export default function Home() {
             ].map((s) => (
               <div key={s.l} className="border-l-2 border-crimson pl-4">
                 <div className="font-display font-bold text-white text-[36px] leading-none">{s.n}</div>
-                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#3a3a3a] mt-1">{s.l}</div>
+                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#555] mt-1">{s.l}</div>
               </div>
             ))}
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       {/* WHAT IS NOTABLE */}
-      <section className="bg-white py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.15fr_1fr] gap-16 md:gap-20">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -79,7 +79,7 @@ export default function Home() {
               Brand. Platform.<br /><em className="font-display font-normal italic text-crimson">Revenue.</em>
             </h2>
             <div className="w-8 h-0.5 bg-crimson my-5" />
-            <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-4">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">
               Notable exists at the intersection of brand, platform, and revenue.
               We work with women solopreneurs and business owners who have done
               the work, built the reputation, and earned the credibility — but
@@ -124,7 +124,7 @@ export default function Home() {
                   <span className="font-display font-normal italic text-warm text-[30px] leading-none w-10 flex-shrink-0 pt-0.5">{d.n}</span>
                   <div>
                     <div className="text-[13px] font-semibold text-ink mb-1">{d.t}</div>
-                    <div className="text-[12px] font-light text-[#666] leading-[1.75]">{d.b}</div>
+                    <div className="text-[12px] font-light text-[#444] leading-[1.75]">{d.b}</div>
                   </div>
                 </div>
               ))}
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES OVERVIEW */}
-      <section className="bg-bone pt-16 md:pt-20 px-6 md:px-16 pb-0">
+      <section className="bg-bone pt-12 md:pt-16 px-6 md:px-16 pb-0">
         <div className="max-w-6xl mx-auto pb-10">
           <div className="flex items-center gap-2.5 mb-4">
             <span className="block w-4 h-px bg-crimson" />
@@ -144,7 +144,7 @@ export default function Home() {
             style={{ fontSize: "clamp(30px,4vw,48px)" }}>
             Three Tiers. <em className="font-display font-normal italic text-crimson">One Journey.</em>
           </h2>
-          <p className="text-[14px] font-light text-[#666] max-w-[480px] leading-[1.85]">
+          <p className="text-[14px] font-light text-[#444] max-w-[480px] leading-[1.85]">
             Enter where you are. Grow into what&apos;s next. Every tier leads naturally to the one that follows.
           </p>
         </div>
@@ -203,13 +203,13 @@ export default function Home() {
               {t.name}
             </div>
             <div className={`w-7 h-[1.5px] bg-crimson mb-5`} />
-            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${t.dark ? "text-[#777]" : "text-[#666]"}`}>
+            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${t.dark ? "text-[#555]" : "text-[#444]"}`}>
               {t.desc}
             </p>
             <div className={`text-[26px] font-bold mb-1 ${t.dark ? "text-white" : "text-crimson"}`}>
               {t.price}
             </div>
-            <div className={`text-[10px] mb-7 ${t.dark ? "text-[#3a3a3a]" : "text-mid"}`}>
+            <div className={`text-[10px] mb-7 ${t.dark ? "text-[#555]" : "text-mid"}`}>
               {t.note}
             </div>
             <Link href={t.href}
@@ -225,7 +225,7 @@ export default function Home() {
       </div>
 
       {/* CLIENT JOURNEY */}
-      <section className="bg-ink py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-ink py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -247,7 +247,7 @@ export default function Home() {
               "Six months later she's back: she wants to start posting on LinkedIn and she's been thinking about a course. That's a LinkedIn Voice Intensive and a Notable Amplify engagement.",
               "A year later, her platform is running, her course is live, and she wants ongoing support. That's Amplify+ Ongoing.",
             ].map((p, i) => (
-              <p key={i} className="text-[14px] font-light text-[#555] leading-[1.9] mb-4">{p}</p>
+              <p key={i} className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">{p}</p>
             ))}
             <Link href="/contact"
               className="inline-block mt-2 bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <div className="bg-crimson py-20 md:py-28 px-6 text-center relative overflow-hidden">
+      <div className="bg-crimson py-14 md:py-20 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <span className="font-display font-black italic text-white opacity-[0.03] whitespace-nowrap"
             style={{ fontSize: "clamp(100px,18vw,200px)", letterSpacing: "-6px" }}>

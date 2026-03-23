@@ -14,7 +14,7 @@ export default function CtaBand({ title, body, cta, href = "/contact", navy = fa
   const btnText = navy ? "text-navy" : "text-crimson";
 
   return (
-    <div className={`${bg} py-20 md:py-28 px-6 text-center relative overflow-hidden`}>
+    <div className={`${bg} py-14 md:py-20 px-6 text-center relative overflow-hidden`}>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
         <span className="font-display font-black italic text-white opacity-[0.03] whitespace-nowrap"
           style={{ fontSize: "clamp(100px,18vw,200px)", letterSpacing: "-6px" }}>

@@ -37,7 +37,7 @@ export default function Nav() {
               <Link
                 href={l.href}
                 className={`text-[10px] font-medium tracking-[2px] uppercase no-underline transition-colors duration-200 ${
-                  pathname === l.href ? "text-white" : "text-[#666] hover:text-white"
+                  pathname === l.href ? "text-white" : "text-[#444] hover:text-white"
                 }`}
               >
                 {l.label}
@@ -75,7 +75,7 @@ export default function Nav() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={`text-[11px] font-medium tracking-[2px] uppercase no-underline transition-colors duration-200 py-1 ${
-                pathname === l.href ? "text-white" : "text-[#666] hover:text-white"
+                pathname === l.href ? "text-white" : "text-[#444] hover:text-white"
               }`}
             >
               {l.label}

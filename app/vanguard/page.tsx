@@ -78,7 +78,7 @@ export default function Vanguard() {
       </section>
 
       {/* NOT FOR EVERYONE */}
-      <section className="bg-white py-20 md:py-28 px-6 md:px-16" id="standard">
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16" id="standard">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -90,10 +90,10 @@ export default function Vanguard() {
               <em className="font-display font-normal italic text-navy">Is the Point.</em>
             </h2>
             <div className="w-8 h-0.5 bg-navy my-5" />
-            <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-4">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">
               Notable Vanguard is not an open enrollment service. Every prospective client completes a Vanguard Interest & Application — a short form that allows us to assess fit, verify impact, and ensure that every man who carries the Vanguard name truly embodies what it stands for.
             </p>
-            <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-8">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-8">
               We are intentional about who we work with because the standard matters. Not everyone will be accepted. That&apos;s exactly what makes it mean something.
             </p>
             <Link href="#apply"
@@ -117,7 +117,7 @@ export default function Vanguard() {
               {forList.map(item => (
                 <div key={item} className="flex gap-2.5 py-2.5 border-b border-navywarm last:border-b-0">
                   <span className="text-navy font-bold flex-shrink-0">—</span>
-                  <p className="text-[13px] font-light text-[#555] leading-[1.6]">{item}</p>
+                  <p className="text-[13px] font-light text-[#333] leading-[1.6]">{item}</p>
                 </div>
               ))}
             </div>
@@ -142,13 +142,13 @@ export default function Vanguard() {
           <div key={p.n} className="bg-white p-10 hover:bg-navymid transition-colors duration-200">
             <div className="font-display font-bold text-[#eef1f8] text-[48px] leading-none mb-3">{p.n}</div>
             <div className="text-[14px] font-semibold text-ink mb-2.5 pb-2.5 border-b border-[#eef1f8]">{p.t}</div>
-            <p className="text-[13px] font-light text-[#666] leading-[1.8]">{p.b}</p>
+            <p className="text-[13px] font-light text-[#444] leading-[1.8]">{p.b}</p>
           </div>
         ))}
       </div>
 
       {/* WHO QUALIFIES */}
-      <section className="bg-navydark py-20 md:py-28 px-6 md:px-16">
+      <section className="bg-navydark py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -179,7 +179,7 @@ export default function Vanguard() {
       </section>
 
       {/* APPLICATION */}
-      <section className="bg-navymid py-20 md:py-28 px-6 md:px-16" id="apply">
+      <section className="bg-navymid py-14 md:py-20 px-6 md:px-16" id="apply">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -190,10 +190,10 @@ export default function Vanguard() {
               Are You a <em className="font-display font-normal italic text-navy">Vanguard?</em>
             </h2>
             <div className="w-8 h-0.5 bg-navy mb-5" />
-            <p className="text-[14px] font-light text-[#555] leading-[1.85] mb-4">
+            <p className="text-[14px] font-light text-[#333] leading-[1.85] mb-4">
               Complete the Notable Vanguard Interest & Application. We review every submission personally and reach out to those who qualify.
             </p>
-            <p className="text-[14px] font-light text-[#555] leading-[1.85] mb-6">
+            <p className="text-[14px] font-light text-[#333] leading-[1.85] mb-6">
               Not everyone will be accepted. That&apos;s exactly what makes it matter.
             </p>
             <div className="border-t border-navywarm pt-5">

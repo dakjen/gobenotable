@@ -44,10 +44,10 @@ export default function Essentials() {
               The Tools That Make You Look <em className="font-display font-normal italic text-crimson">The Part</em>
             </h2>
             <div className="w-8 h-0.5 bg-crimson my-5" />
-            <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-4">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">
               Notable Essentials is the brand foundation every founder needs before she can grow. These are the tools that establish credibility, communicate value, and make it possible to pitch, present, and win — consistently and professionally.
             </p>
-            <p className="text-[14px] font-light text-[#555] leading-[1.9]">
+            <p className="text-[14px] font-light text-[#333] leading-[1.9]">
               You bring the vision. We build the assets that make it real. All packages include wordsmithing and moderate editing throughout.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function Essentials() {
           <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
             Three Starting Points. <em className="font-display font-normal italic text-crimson">One Custom Fit.</em>
           </h2>
-          <p className="text-[14px] font-light text-[#666] max-w-[540px] leading-[1.85]">
+          <p className="text-[14px] font-light text-[#444] max-w-[540px] leading-[1.85]">
             If you&apos;re looking for a quick upgrade to how you show up, these are our three core offerings. But every founder is different — on your discovery call, we&apos;ll figure out exactly what you need and build the right scope for where you are.
           </p>
         </div>
@@ -86,8 +86,8 @@ export default function Essentials() {
             className={`flex flex-col p-9 md:p-11 ${pkg.dark ? "bg-ink" : "bg-bone"}`}>
             <div className={`font-display font-bold text-[26px] mb-2 leading-[1.1] ${pkg.dark ? "text-white" : "text-ink"}`}>{pkg.name}</div>
             <div className={`text-[28px] font-bold leading-none mb-1 ${pkg.dark ? "text-white" : "text-crimson"}`}>{pkg.price}</div>
-            <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#555] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
-            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#888]" : "text-[#666]"}`}>{pkg.desc}</p>
+            <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#333] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
+            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#666]" : "text-[#444]"}`}>{pkg.desc}</p>
             <Link href="/contact"
               className={`self-start text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline transition-colors duration-200 ${
                 pkg.dark
@@ -105,7 +105,7 @@ export default function Essentials() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-[500px]">
             <div className="font-display font-bold text-[20px] text-ink mb-2">Not sure which one fits?</div>
-            <p className="text-[13px] font-light text-[#666] leading-[1.75]">
+            <p className="text-[13px] font-light text-[#444] leading-[1.75]">
               That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right package around you. These are starting points. Your scope is custom.
             </p>
           </div>
@@ -121,7 +121,7 @@ export default function Essentials() {
           <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-1">Add-On Service</div>
           <div className="font-display font-bold text-[24px] text-ink">+ Updates &amp; More</div>
         </div>
-        <p className="text-[13px] font-light text-[#666] leading-[1.7] max-w-[380px]">
+        <p className="text-[13px] font-light text-[#444] leading-[1.7] max-w-[380px]">
           For existing clients — qual package updates, deck graphics, website updates. Complete overhauls scoped separately.
         </p>
         <div className="text-[28px] font-bold text-crimson whitespace-nowrap">$150 <span className="text-[13px] font-light text-mid">/ service</span></div>
@@ -130,38 +130,86 @@ export default function Essentials() {
         </Link>
       </div>
 
-      {/* LINKEDIN BAND */}
-      <div className="bg-crimson py-16 md:py-20 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
-          <div>
-            <div className="text-[10px] font-semibold tracking-[4px] uppercase text-white/40 mb-3">Standalone Service</div>
-            <h2 className="font-display font-bold text-white leading-[1.1] mb-3" style={{ fontSize:"clamp(30px,4vw,48px)" }}>
-              LinkedIn Voice <em className="font-display font-normal italic text-white/40">Intensive</em>
-            </h2>
-            <p className="text-[14px] font-light text-white/70 leading-[1.8] mb-5">
-              LinkedIn is often the first place a potential client, investor, or partner checks you out. If your profile doesn&apos;t reflect your expertise, you&apos;re leaving opportunity on the table every single day.
-            </p>
-            <div className="text-[28px] font-bold text-white mb-1">Starting at $1,500</div>
-            <div className="text-[11px] font-light text-white/40 tracking-wide mb-7">Can be added to any Essentials package · or scoped standalone</div>
-            <Link href="/contact" className="inline-block bg-white text-crimson text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-bone transition-colors duration-200">
-              Get Started
-            </Link>
+      {/* A LA CARTE OFFERINGS */}
+      <section className="bg-ink py-12 md:py-16 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="block w-4 h-px bg-crimson" />
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">A La Carte</span>
           </div>
-          <ul className="list-none">
-            {[
-              "Full profile audit and rewrite — headline, about section, featured, experience framing",
-              "Brand voice and content pillar development",
-              "Content strategy and posting framework tailored to your goals",
-              "2 months of LinkedIn posts — written, edited, and ready to publish",
-              "30-day content calendar",
-              "Engagement and network growth strategy",
-              "One 60-minute strategy session to align on voice, goals, and audience",
-            ].map((item) => (
-              <li key={item} className="text-[13px] font-light text-white/80 py-2.5 pl-4 relative border-b border-white/10 leading-[1.5] last:border-b-0">
-                <span className="absolute left-0 text-white/35">–</span>{item}
+          <h2 className="font-display font-bold text-white leading-[1.1] tracking-[-0.5px] mb-3" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
+            Standalone <em className="font-display font-normal italic text-crimson">Intensives</em>
+          </h2>
+          <p className="text-[14px] font-light text-[#444] max-w-[520px] leading-[1.85] mb-10">
+            These can be added to any Essentials package or purchased on their own. Each one is designed to move the needle on a specific part of your platform.
+          </p>
+        </div>
+      </section>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-[#1a1a1a]">
+        {/* LinkedIn Voice Intensive */}
+        <div className="bg-ink p-9 md:p-11 flex flex-col">
+          <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 01</div>
+          <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">LinkedIn Voice Intensive</div>
+          <div className="w-7 h-[1.5px] bg-crimson mb-5" />
+          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+            LinkedIn is often the first place a potential client, investor, or partner checks you out. We rewrite your entire presence — profile, content strategy, and 2 months of posts, ready to publish.
+          </p>
+          <ul className="list-none mb-6">
+            {["Full profile audit and rewrite", "Brand voice and content pillars", "2 months of posts — written and ready", "30-day content calendar", "Engagement and growth strategy", "60-minute strategy session"].map(item => (
+              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+                <span className="absolute left-0 text-crimson">–</span>{item}
               </li>
             ))}
           </ul>
+          <div className="text-[24px] font-bold text-white mb-1">$1,500+</div>
+          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
+            Get Started
+          </Link>
+        </div>
+
+        {/* Video Content Intensive */}
+        <div className="bg-ink p-9 md:p-11 flex flex-col">
+          <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 02</div>
+          <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">Video Content Intensive</div>
+          <div className="w-7 h-[1.5px] bg-crimson mb-5" />
+          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+            Short-form video is how the world discovers you. We develop your video content strategy, script your first batch, and give you a repeatable framework so you can keep showing up with confidence.
+          </p>
+          <ul className="list-none mb-6">
+            {["Video content strategy and positioning", "Script development for first batch of videos", "Posting framework and cadence plan", "Platform-specific optimization guidance", "Brand voice alignment for video", "60-minute strategy session"].map(item => (
+              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+                <span className="absolute left-0 text-crimson">–</span>{item}
+              </li>
+            ))}
+          </ul>
+          <div className="text-[24px] font-bold text-white mb-1">$2,000+</div>
+          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
+            Let&apos;s Talk
+          </Link>
+        </div>
+
+        {/* Social Media Handbook & 30-Day Plan */}
+        <div className="bg-ink p-9 md:p-11 flex flex-col">
+          <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 03</div>
+          <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">Social Media Handbook &amp; 30-Day Plan</div>
+          <div className="w-7 h-[1.5px] bg-crimson mb-5" />
+          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+            Your complete social media playbook — brand voice guidelines, content categories, a full 30-day posting plan, and everything you need to show up consistently across platforms without second-guessing every post.
+          </p>
+          <ul className="list-none mb-6">
+            {["Brand voice and social media guidelines", "Content pillar and category framework", "Full 30-day content calendar", "Post templates and caption frameworks", "Platform strategy and best practices", "Hashtag and engagement strategy"].map(item => (
+              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+                <span className="absolute left-0 text-crimson">–</span>{item}
+              </li>
+            ))}
+          </ul>
+          <div className="text-[24px] font-bold text-white mb-1">$2,750+</div>
+          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
+            Let&apos;s Talk
+          </Link>
         </div>
       </div>
 

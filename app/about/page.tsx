@@ -75,7 +75,7 @@ export default function About() {
                   Every Amplify engagement is custom-scoped over a 6–8 week timeline. Most include 2–4 deliverables depending on your goals and budget. We also offer Amplify+ Ongoing for monthly platform management after your build is complete.
                 </p>
                 <div className="flex items-center gap-4">
-                  <span className="text-[20px] font-bold text-crimson">From $8,000</span>
+                  <span className="text-[20px] font-bold text-crimson">From $4,000</span>
                   <span className="text-[10px] font-semibold tracking-[2px] uppercase text-crimson group-hover:underline">Learn About Amplify →</span>
                 </div>
               </Link>

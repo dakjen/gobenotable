@@ -162,7 +162,7 @@ export default function Home() {
           {
             tag: "Tier 2 · Platform Buildout",
             name: "Notable Amplify",
-            price: "From $8,000",
+            price: "From $4,000",
             note: "Custom-scoped per engagement · 6–8 weeks",
             desc: "Platform and revenue stream buildout — courses, books, LinkedIn, speaking series — fully executed.",
             href: "/amplify",

@@ -33,7 +33,7 @@ export default function Amplify() {
       <PageHero
         eyebrow="Tier 2 · The Flagship Offering"
         title={<>Notable <em className="font-display font-normal italic text-crimson">Amplify</em></>}
-        subtitle="You're sitting on more revenue than you realize. Let's find it and build it. Platform and revenue stream buildout — custom-scoped, fully executed, ready to launch. Starting at $8,000."
+        subtitle="You're sitting on more revenue than you realize. Let's find it and build it. Platform and revenue stream buildout — custom-scoped, fully executed, ready to launch. Starting at $4,000."
       />
 
       {/* WHAT IS AMPLIFY */}
@@ -54,7 +54,7 @@ export default function Amplify() {
             <p className="text-[14px] font-light text-[#444] leading-[1.9] mb-8">
               We begin with a deep assessment, identify the monetizable opportunities she&apos;s sitting on, then build them. Not a strategy deck. The actual thing.
             </p>
-            <div className="text-[28px] font-bold text-white mb-1">From $8,000</div>
+            <div className="text-[28px] font-bold text-white mb-1">From $4,000</div>
             <div className="text-[11px] font-light text-[#444] tracking-wide mb-7">Custom-scoped per engagement · 6–8 week timeline</div>
             <Link href="/contact" className="inline-block bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
               Book an Amplify Discovery Call

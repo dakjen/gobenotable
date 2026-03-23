@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
@@ -60,6 +61,9 @@ export default function Amplify() {
             </Link>
           </div>
           <div>
+            <div className="relative w-full aspect-[3/4] mb-6 overflow-hidden">
+              <Image src="/images/city-aspirational.jpg" alt="Woman on city rooftop at dusk" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
             <div className="relative bg-[#0a0a0a] border border-[#1e1e1e] p-7 mb-6">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-10 select-none">&ldquo;</span>
               <p className="font-display italic text-[17px] text-[#aaa] leading-[1.65] relative z-10">

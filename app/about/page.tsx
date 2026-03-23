@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
@@ -49,6 +50,9 @@ export default function About() {
             </p>
           </div>
           <div>
+            <div className="relative w-full aspect-[4/3] mb-8 overflow-hidden">
+              <Image src="/images/profile-editorial.jpg" alt="Notable editorial portrait" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
             <div className="relative bg-bone p-6 pl-7 mb-8">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>
               <p className="font-display italic text-[17px] text-ink leading-[1.65] relative z-10">

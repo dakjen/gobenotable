@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import VanguardForm from "@/components/VanguardForm";
 
@@ -101,6 +102,9 @@ export default function Vanguard() {
             </Link>
           </div>
           <div>
+            <div className="relative w-full aspect-[4/3] mb-7 overflow-hidden">
+              <Image src="/images/professional-cafe.jpg" alt="Professional woman at work" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
             <div className="relative bg-navymid p-6 pl-7 mb-7">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-navy leading-none opacity-15 select-none">&ldquo;</span>
               <p className="font-display italic text-[17px] text-ink leading-[1.65] relative z-10">

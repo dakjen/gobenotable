@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -44,8 +45,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* stats */}
+        {/* Hero image + stats */}
         <div className="hidden md:flex flex-col gap-5 items-end justify-end relative z-10">
+          <div className="relative w-full max-w-[400px] aspect-[3/4] mb-5 overflow-hidden">
+            <Image src="/images/hero-silhouette.jpg" alt="Woman founder silhouette" fill className="object-cover object-top" sizes="400px" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
+          </div>
           <div className="border border-[#1e1e1e] p-8 flex flex-col gap-6 w-full max-w-[340px]">
             {[
               { n: "$1K",  l: "Starting Point" },
@@ -91,6 +96,10 @@ export default function Home() {
           </div>
 
           <div>
+            {/* Image */}
+            <div className="relative w-full aspect-[4/3] mb-8 overflow-hidden">
+              <Image src="/images/working-laptop.jpg" alt="Woman founder working on laptop" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
             {/* Pull quote */}
             <div className="relative bg-bone p-6 pl-7 mb-8">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>
@@ -228,6 +237,9 @@ export default function Home() {
               She Comes for<br />a Qual Package.<br />
               <em className="font-display font-normal italic text-crimson">She Stays for<br />the Platform.</em>
             </h2>
+            <div className="relative w-full aspect-[3/4] max-w-[320px] mt-10 overflow-hidden hidden md:block">
+              <Image src="/images/confident-red.jpg" alt="Confident woman founder" fill className="object-cover" sizes="320px" />
+            </div>
           </div>
           <div>
             {[

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
@@ -60,6 +61,10 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="relative w-full aspect-[4/3] mb-10 overflow-hidden">
+              <Image src="/images/hero-joyful.jpg" alt="Joyful woman founder" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 40vw" />
             </div>
 
             <div className="border-t border-warm pt-5">

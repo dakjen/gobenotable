@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
@@ -79,11 +80,16 @@ export default function Essentials() {
               You bring the vision. We build the assets that make it real. All packages include wordsmithing and moderate editing throughout.
             </p>
           </div>
-          <div className="relative bg-bone p-6 pl-7 self-start">
-            <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>
-            <p className="font-display italic text-[17px] text-ink leading-[1.65] relative z-10">
-              &ldquo;She comes to Notable for a qual package. We build it, she wins the contract. Six months later she&apos;s back for her LinkedIn and a course. That is the Notable outcome.&rdquo;
-            </p>
+          <div>
+            <div className="relative w-full aspect-[3/4] mb-8 overflow-hidden">
+              <Image src="/images/founder-blazer.jpg" alt="Professional woman founder" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="relative bg-bone p-6 pl-7">
+              <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>
+              <p className="font-display italic text-[17px] text-ink leading-[1.65] relative z-10">
+                &ldquo;She comes to Notable for a qual package. We build it, she wins the contract. Six months later she&apos;s back for her LinkedIn and a course. That is the Notable outcome.&rdquo;
+              </p>
+            </div>
           </div>
         </div>
       </section>

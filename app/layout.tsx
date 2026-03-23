@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Notable — Go Be Notable. We'll Do The Rest.",
   description:
     "Notable by DakJen Creative LLC. Brand, platform, and revenue buildout for high-performing women founders and executives.",
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "Notable — Go Be Notable. We'll Do The Rest.",
     description:

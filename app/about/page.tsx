@@ -44,14 +44,28 @@ export default function About() {
             <p className="text-[14px] font-light text-[#555] leading-[1.9] mb-4">
               Notable works with women solopreneurs and business owners who have done the work, built the reputation, and earned the credibility — but haven&apos;t yet built the platform and revenue streams that reflect how far they&apos;ve come.
             </p>
-            <p className="text-[15px] font-normal text-ink leading-[1.9]">
+            <p className="text-[15px] font-normal text-ink leading-[1.9] mb-10">
               Most branding agencies will make you look good. Notable makes you{" "}
               <em className="italic text-crimson">impossible to overlook.</em>
             </p>
+
+            {/* Essentials vs Amplify */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link href="/essentials" className="group border border-warm p-5 no-underline hover:bg-bone transition-colors duration-200">
+                <div className="text-[9px] font-semibold tracking-[3px] uppercase text-crimson mb-2">Tier 1 · Brand Foundation</div>
+                <div className="font-display font-bold text-ink text-[18px] mb-2 group-hover:text-crimson transition-colors duration-200">Notable Essentials</div>
+                <p className="text-[12px] font-light text-[#666] leading-[1.7]">Qualifications packages, decks, and websites that make you look the part from day one. Starting at $1,000.</p>
+              </Link>
+              <Link href="/amplify" className="group border border-warm p-5 no-underline hover:bg-bone transition-colors duration-200">
+                <div className="text-[9px] font-semibold tracking-[3px] uppercase text-crimson mb-2">Tier 2 · Platform Buildout</div>
+                <div className="font-display font-bold text-ink text-[18px] mb-2 group-hover:text-crimson transition-colors duration-200">Notable Amplify</div>
+                <p className="text-[12px] font-light text-[#666] leading-[1.7]">Platform and revenue stream buildout — courses, books, LinkedIn, speaking series — fully executed. From $8,000.</p>
+              </Link>
+            </div>
           </div>
           <div>
             <div className="relative w-full aspect-[4/3] mb-8 overflow-hidden">
-              <Image src="/images/profile-editorial.jpg" alt="Notable editorial portrait" fill className="object-cover object-top" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/creative-workspace.jpg" alt="Woman working in creative space" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="relative bg-bone p-6 pl-7 mb-8">
               <span className="absolute top-[-8px] left-4 font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>

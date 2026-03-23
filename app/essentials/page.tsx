@@ -7,49 +7,20 @@ export const metadata = { title: "Notable Essentials — Brand Foundation Packag
 
 const packages = [
   {
-    tag: "Entry Level", name: "Ready 2 Roll", price: "$1,000", timeline: "Complete in 2–3 weeks",
-    desc: "The entry-level package for founders who need a polished brand foundation quickly. Everything you need to show up professionally and start pitching.",
-    includes: [
-      "7-Page Qualifications Package with templates — Cover, TOC, About, Services, Founder page, and more",
-      "Project Deck Template",
-      "1-Page Website",
-      "Wordsmithing and moderate editing throughout",
-    ],
-    best: "Best for founders who are just starting to pitch for contracts, partnerships, or clients and need a professional presence immediately.",
-    dark: false, flagship: false,
+    name: "Ready 2 Roll", price: "From $1,000", timeline: "2–3 weeks",
+    desc: "Qual package, deck template, 1-page website. Everything you need to show up professionally and start pitching.",
+    dark: false,
   },
   {
-    tag: "Mid-Tier", name: "Get Loud", price: "$1,750", timeline: "Complete in 3–4 weeks",
-    desc: "The mid-tier package for founders who need a comprehensive brand toolkit — including a deeper qualifications package and a multi-page website.",
-    includes: [
-      "8–12 Page Qualifications Package with project profile templates — Cover, TOC, About, Services, Founder page, Resume, Previous Projects",
-      "Project Deck Template with About and Founder pages completed",
-      "2–4 Page Website",
-      "$20/month ongoing website maintenance",
-      "Wordsmithing and moderate editing throughout",
-    ],
-    best: "Best for founders actively pursuing government contracts, corporate partnerships, or investor conversations.",
-    dark: true, flagship: true,
+    name: "Get Loud", price: "From $1,750", timeline: "3–4 weeks",
+    desc: "Deeper qual package, completed deck pages, multi-page website with ongoing maintenance. The full mid-tier toolkit.",
+    dark: true,
   },
   {
-    tag: "Premium", name: "Marquis", price: "$3,000", timeline: "Complete in 4 weeks",
-    desc: "The premium Essentials package. Everything, fully completed, with one year of website maintenance included.",
-    includes: [
-      "Full Qualifications Package — every section completed with all templates",
-      "Full Presentation Deck with template slides",
-      "2–4 Page Premium Website",
-      "1 year of website maintenance included",
-      "Wordsmithing and moderate editing throughout",
-    ],
-    best: "Best for founders who want the full brand toolkit done right, once, with ongoing support built in.",
-    dark: false, flagship: false,
+    name: "Marquis", price: "From $3,000", timeline: "4 weeks",
+    desc: "Everything, fully completed — full qual package, full deck, premium website, and one year of maintenance included.",
+    dark: false,
   },
-];
-
-const compare = [
-  { name: "Ready 2 Roll", qual: "7 pages", site: "1-page", deck: "Template", maint: "—", time: "2–3 weeks", price: "$1,000" },
-  { name: "Get Loud",     qual: "8–12 pages", site: "2–4 page", deck: "Template + completed", maint: "$20/mo", time: "3–4 weeks", price: "$1,750" },
-  { name: "Marquis",      qual: "Full + all templates", site: "2–4 page premium", deck: "Full deck", maint: "1 year included", time: "4 weeks", price: "$3,000" },
 ];
 
 export default function Essentials() {
@@ -94,51 +65,54 @@ export default function Essentials() {
         </div>
       </section>
 
-      {/* PACKAGES */}
+      {/* PACKAGES — quick picks */}
       <section className="bg-bone pt-16 px-6 md:px-16 pb-0">
         <div className="max-w-6xl mx-auto pb-10">
           <div className="flex items-center gap-2.5 mb-4">
             <span className="block w-4 h-px bg-crimson" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Packages</span>
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Quick Look</span>
           </div>
-          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px]" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
-            Choose Your <em className="font-display font-normal italic text-crimson">Starting Point</em>
+          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
+            Three Starting Points. <em className="font-display font-normal italic text-crimson">One Custom Fit.</em>
           </h2>
+          <p className="text-[14px] font-light text-[#666] max-w-[540px] leading-[1.85]">
+            If you&apos;re looking for a quick upgrade to how you show up, these are our three core offerings. But every founder is different — on your discovery call, we&apos;ll figure out exactly what you need and build the right scope for where you are.
+          </p>
         </div>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-warm">
         {packages.map((pkg) => (
           <div key={pkg.name}
-            className={`relative flex flex-col p-9 md:p-11 ${pkg.dark ? "bg-ink" : "bg-bone"}`}>
-            {pkg.flagship && (
-              <div className="absolute top-0 right-0 bg-crimson text-white text-[8px] font-semibold tracking-[2px] uppercase px-3.5 py-1.5">
-                Most Popular
-              </div>
-            )}
-            <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-2">{pkg.tag}</div>
-            <div className={`font-display font-bold text-[26px] mb-1 ${pkg.dark ? "text-white" : "text-ink"}`}>{pkg.name}</div>
-            <div className={`text-[36px] font-bold leading-none mb-1 ${pkg.dark ? "text-white" : "text-crimson"}`}>{pkg.price}</div>
+            className={`flex flex-col p-9 md:p-11 ${pkg.dark ? "bg-ink" : "bg-bone"}`}>
+            <div className={`font-display font-bold text-[26px] mb-2 leading-[1.1] ${pkg.dark ? "text-white" : "text-ink"}`}>{pkg.name}</div>
+            <div className={`text-[28px] font-bold leading-none mb-1 ${pkg.dark ? "text-white" : "text-crimson"}`}>{pkg.price}</div>
             <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#555] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
-            <p className={`text-[13px] font-light leading-[1.8] mb-5 ${pkg.dark ? "text-[#888]" : "text-[#666]"}`}>{pkg.desc}</p>
-            <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">What&apos;s Included</div>
-            <ul className="list-none mb-5 flex-1">
-              {pkg.includes.map((item) => (
-                <li key={item} className={`text-[12.5px] font-light py-2 pl-4 relative border-b leading-[1.5] ${pkg.dark ? "text-[#999] border-[#1e1e1e]" : "text-[#555] border-warm/70"}`}>
-                  <span className="absolute left-0 text-crimson">–</span>{item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-[12px] font-light italic text-mauve leading-[1.6] mb-5">{pkg.best}</p>
+            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#888]" : "text-[#666]"}`}>{pkg.desc}</p>
             <Link href="/contact"
               className={`self-start text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline transition-colors duration-200 ${
                 pkg.dark
                   ? "bg-crimson text-white hover:bg-crimson2"
                   : "bg-transparent border border-warm text-ink hover:bg-ink hover:text-white hover:border-ink"
               }`}>
-              Get Started
+              Let&apos;s Talk
             </Link>
           </div>
         ))}
+      </div>
+
+      {/* CUSTOM FIT CALLOUT */}
+      <div className="bg-bone px-6 md:px-16 py-10 border-t-[2px] border-warm">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-[500px]">
+            <div className="font-display font-bold text-[20px] text-ink mb-2">Not sure which one fits?</div>
+            <p className="text-[13px] font-light text-[#666] leading-[1.75]">
+              That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right package around you. These are starting points. Your scope is custom.
+            </p>
+          </div>
+          <Link href="/contact" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200 flex-shrink-0">
+            Book a Discovery Call
+          </Link>
+        </div>
       </div>
 
       {/* ADD ON */}
@@ -191,46 +165,9 @@ export default function Essentials() {
         </div>
       </div>
 
-      {/* COMPARE */}
-      <section className="bg-white py-16 md:py-20 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="block w-4 h-px bg-crimson" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Quick Compare</span>
-          </div>
-          <h2 className="font-display font-bold text-ink leading-[1.1] mb-8" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
-            Essentials <em className="font-display font-normal italic text-crimson">at a Glance</em>
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-[13px] font-light">
-              <thead>
-                <tr className="border-b-[1.5px] border-crimson">
-                  {["Package","Qual Package","Website","Deck","Maintenance","Timeline","Price"].map(h => (
-                    <th key={h} className="text-left py-3 px-4 text-[10px] font-semibold tracking-[2.5px] uppercase text-mauve">{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {compare.map((row, i) => (
-                  <tr key={row.name} className={`border-b border-warm ${i % 2 === 1 ? "bg-bone" : ""}`}>
-                    <td className="py-4 px-4 font-semibold text-ink">{row.name}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.qual}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.site}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.deck}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.maint}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.time}</td>
-                    <td className="py-4 px-4 font-bold text-crimson">{row.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       <CtaBand
         title="Ready to look the part?"
-        body="Let's get your brand foundation built. Book a call and we'll confirm the right package for where you are right now."
+        body="Let's get your brand foundation built. Book a call and we'll figure out the right fit together."
         cta="Book a Call"
       />
     </div>

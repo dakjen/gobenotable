@@ -1,19 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = { title: "Book a Discovery Call — Notable" };
-
-const allServices = [
-  { name: "Ready 2 Roll",           what: "7-pg qual package, deck template, 1-pg website",                          time: "2–3 weeks",  price: "$1,000" },
-  { name: "Get Loud",               what: "8–12 pg qual package, deck template, 2–4 pg website + maintenance",        time: "3–4 weeks",  price: "$1,750" },
-  { name: "Marquis",                what: "Full qual package, full deck, 2–4 pg premium website, 1 yr maintenance",   time: "4 weeks",    price: "$3,000" },
-  { name: "+ Updates & More",       what: "Qual updates, deck changes, website updates",                               time: "1 week",     price: "$150/service" },
-  { name: "LinkedIn Voice Intensive",what: "Profile rewrite, voice strategy, 2 months of posts, content calendar",   time: "2–3 weeks",  price: "From $1,500" },
-  { name: "Notable Amplify",        what: "Platform assessment, revenue stream buildout, deliverables + launch package", time: "6–8 weeks", price: "From $8,000" },
-  { name: "Amplify+ Ongoing",       what: "Monthly content, strategy sessions, brand management, partner coordination", time: "Ongoing",   price: "$3,000–$5,000/mo" },
-];
 
 const steps = [
   { n: "01", t: "We listen",    b: "Tell us what you've built, what you're working toward, and what's been getting in the way." },
@@ -81,43 +70,6 @@ export default function Contact() {
 
           {/* Right — form */}
           <ContactForm />
-        </div>
-      </section>
-
-      {/* SERVICES REFERENCE */}
-      <section className="bg-white py-16 md:py-20 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="block w-4 h-px bg-crimson" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Quick Reference</span>
-          </div>
-          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-8"
-            style={{ fontSize: "clamp(28px,3.5vw,44px)" }}>
-            Notable <em className="font-display font-normal italic text-crimson">at a Glance</em>
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-[13px] font-light">
-              <thead>
-                <tr className="border-b-[1.5px] border-crimson">
-                  {["Service", "What You Get", "Timeline", "Price"].map((h) => (
-                    <th key={h} className="text-left py-3 px-4 text-[10px] font-semibold tracking-[2.5px] uppercase text-mauve">
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {allServices.map((row, i) => (
-                  <tr key={row.name} className={`border-b border-warm ${i % 2 === 1 ? "bg-bone" : ""}`}>
-                    <td className="py-4 px-4 font-semibold text-ink whitespace-nowrap">{row.name}</td>
-                    <td className="py-4 px-4 text-[#555]">{row.what}</td>
-                    <td className="py-4 px-4 text-[#555] whitespace-nowrap">{row.time}</td>
-                    <td className="py-4 px-4 font-bold text-crimson whitespace-nowrap">{row.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
     </div>

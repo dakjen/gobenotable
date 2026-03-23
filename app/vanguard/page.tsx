@@ -32,7 +32,10 @@ export default function Vanguard() {
             <span className="block w-4 h-px bg-navy" />
             <span className="text-[10px] font-medium tracking-[4px] uppercase text-navy">A Notable Sub-Brand · DakJen Creative LLC</span>
           </div>
-          <div className="text-[11px] font-semibold tracking-[6px] uppercase text-[#2a3550] mb-1">Notable</div>
+          <div className="flex items-center gap-3 mb-1">
+            <Image src="/images/vanguard-mark.png" alt="Vanguard logo" width={28} height={36} className="opacity-60" />
+            <span className="text-[11px] font-semibold tracking-[6px] uppercase text-[#2a3550]">Notable</span>
+          </div>
           <h1 className="font-display font-black text-white leading-[0.95] tracking-[-3px] mb-4"
             style={{ fontSize: "clamp(72px,12vw,120px)" }}>
             Vanguard
@@ -58,7 +61,7 @@ export default function Vanguard() {
         {/* Hero image + Standards preview */}
         <div className="hidden md:flex flex-col gap-5 items-end justify-end relative z-10">
           <div className="relative w-full max-w-[400px] aspect-[3/4] mb-5 overflow-hidden">
-            <Image src="/images/vanguard-stride.jpg" alt="Man walking with briefcase" fill className="object-cover object-top" sizes="400px" />
+            <Image src="/images/vanguard-suited.jpg" alt="Man in suit holding coffee" fill className="object-cover object-top" sizes="400px" />
             <div className="absolute inset-0 bg-gradient-to-t from-navydark via-transparent to-transparent" />
           </div>
         <div className="border border-[#1a2540] p-8 w-full max-w-[400px]">
@@ -133,14 +136,19 @@ export default function Vanguard() {
 
       {/* FOUR PILLARS */}
       <section className="bg-bone pb-0 pt-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto pb-10">
-          <div className="flex items-center gap-2.5 mb-4">
-            <span className="block w-4 h-px bg-navy" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-navy">What Vanguard Is Built On</span>
+        <div className="max-w-6xl mx-auto pb-10 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-12 items-center">
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="block w-4 h-px bg-navy" />
+              <span className="text-[10px] font-semibold tracking-[4px] uppercase text-navy">What Vanguard Is Built On</span>
+            </div>
+            <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px]" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
+              Four <em className="font-display font-normal italic text-navy">Standards.</em>
+            </h2>
           </div>
-          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px]" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
-            Four <em className="font-display font-normal italic text-navy">Standards.</em>
-          </h2>
+          <div className="relative w-full aspect-[16/9] overflow-hidden hidden md:block">
+            <Image src="/images/vanguard-cafe.jpg" alt="Young professional at cafe" fill className="object-cover object-center" sizes="50vw" />
+          </div>
         </div>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-navywarm">
@@ -175,7 +183,7 @@ export default function Vanguard() {
           </div>
           <div>
             <div className="relative w-full aspect-[4/3] mb-7 overflow-hidden">
-              <Image src="/images/vanguard-collab.jpg" alt="Two men in suits collaborating" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/vanguard-camel.jpg" alt="Man in camel coat on phone" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
             <div className="flex flex-col">
               {forList.map(item => (
@@ -207,6 +215,14 @@ export default function Vanguard() {
             <p className="text-[14px] font-light text-[#333] leading-[1.85] mb-6">
               Not everyone will be accepted. That&apos;s exactly what makes it matter.
             </p>
+            <div className="grid grid-cols-2 gap-2 mb-6">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image src="/images/vanguard-stride.jpg" alt="Man walking with briefcase" fill className="object-cover object-center" sizes="25vw" />
+              </div>
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image src="/images/vanguard-collab.jpg" alt="Two men collaborating" fill className="object-cover object-center" sizes="25vw" />
+              </div>
+            </div>
             <div className="border-t border-navywarm pt-5">
               <p className="text-[11px] font-light text-[#aaa] italic leading-[1.7]">
                 Applications are confidential. We review every submission personally and contact qualified applicants directly. The standard is non-negotiable.

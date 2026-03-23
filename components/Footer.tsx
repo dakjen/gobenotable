@@ -77,7 +77,9 @@ export default function Footer() {
         <p className="text-[10px] font-light text-[#444]">
           © 2026 Notable by DakJen Creative LLC — All Rights Reserved.
         </p>
-        <p className="text-[10px] font-light text-[#1a1a1a]">gobenotable.com</p>
+        <Link href="/admin" className="text-[10px] font-light text-[#2a2a2a] no-underline hover:text-[#555] transition-colors duration-200">
+          Admin Access
+        </Link>
       </div>
     </footer>
   );

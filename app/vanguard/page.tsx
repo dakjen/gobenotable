@@ -23,7 +23,7 @@ export default function Vanguard() {
   return (
     <div>
       {/* HERO — navy */}
-      <section className="bg-navydark min-h-[calc(100vh-94px)] grid grid-cols-1 md:grid-cols-2 items-end gap-10 px-6 md:px-16 pt-[calc(36px+80px)] pb-16 relative overflow-hidden border-b border-navy">
+      <section className="bg-navydark min-h-[calc(100vh-94px)] grid grid-cols-1 md:grid-cols-2 items-start gap-10 px-6 md:px-16 pt-[calc(36px+80px)] pb-16 relative overflow-hidden border-b border-navy">
         <div className="absolute w-[600px] h-[600px] rounded-full top-[-150px] right-[-80px] pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(30,58,110,0.2) 0%, transparent 70%)" }} />
 
@@ -64,7 +64,7 @@ export default function Vanguard() {
             <Image src="/images/vanguard-suited.jpg" alt="Man in suit holding coffee" fill className="object-cover object-top" sizes="400px" />
             <div className="absolute inset-0 bg-gradient-to-t from-navydark via-transparent to-transparent" />
           </div>
-        <div className="border border-[#1a2540] p-8 w-full max-w-[400px]">
+        <div className="border border-[#1a2540] p-8 w-full">
           <div className="text-[9px] font-semibold tracking-[4px] uppercase text-[#2a3550] mb-5">
             What Vanguard Is Built On
           </div>

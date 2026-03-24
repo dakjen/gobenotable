@@ -161,7 +161,7 @@ export default function About() {
       <section className="bg-white py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-center">
           <div className="relative w-full max-w-[280px] aspect-[3/4] overflow-hidden mx-auto md:mx-0">
-            <Image src="/images/founder-blazer.jpg" alt="DakotahJennifer — Founder of Notable" fill className="object-cover object-top" sizes="280px" />
+            <Image src="/images/headshot-founder.png" alt="Dakotah Jennifer — Founder of Notable" fill className="object-cover object-top" sizes="280px" />
           </div>
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -169,7 +169,7 @@ export default function About() {
               <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">The Founder</span>
             </div>
             <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-2" style={{ fontSize:"clamp(28px,3.5vw,42px)" }}>
-              DakotahJennifer
+              Dakotah Jennifer
             </h2>
             <p className="text-[10px] font-semibold tracking-[3px] uppercase text-mauve mb-5">Founder &amp; Creative Director · DakJen Creative LLC</p>
             <p className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">

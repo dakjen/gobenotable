@@ -56,7 +56,7 @@ export default function IntensiveForm() {
         <select name="tier" required className={f}>
           <option value="" disabled selected>Select a tier</option>
           <option value="The Launch — $1,750">Tier 1 — The Launch ($1,750)</option>
-          <option value="The Full Build — $4,500">Tier 2 — The Full Build ($4,500)</option>
+          <option value="The Foundation — $4,500">Tier 2 — The Foundation ($4,500)</option>
           <option value="Not sure yet">Not sure yet — help me decide</option>
         </select>
       </div>

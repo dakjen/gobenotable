@@ -137,15 +137,15 @@ export default function Home() {
             {/* Tier 2 */}
             <div className="bg-[#1a1a1a] p-5 md:p-6 flex flex-col relative">
               <div className="absolute top-0 right-0 bg-crimson text-white text-[7px] font-semibold tracking-[2px] uppercase px-2.5 py-1">
-                Full Build
+                Foundation
               </div>
               <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-1.5">Tier 2</div>
-              <div className="font-display font-bold text-white text-[18px] leading-tight mb-0.5">The Full Build</div>
+              <div className="font-display font-bold text-white text-[18px] leading-tight mb-0.5">The Foundation</div>
               <div className="text-[22px] font-bold text-crimson mb-2">$4,500</div>
               <div className="w-5 h-[1.5px] bg-crimson mb-3" />
               <ul className="space-y-1.5 flex-1">
                 {[
-                  "Everything in The Launch",
+                  "Everything in The Launch +",
                   "3 Brand Deliverables",
                   "90-Day Marketing Plan",
                 ].map((item) => (

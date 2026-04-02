@@ -48,8 +48,6 @@ export default function ContactForm() {
         <label className={l}>What Service Are You Interested In?</label>
         <select name="service" className={f}>
           <option value="" disabled>Select a service</option>
-          <option>24-Hour Brand Intensive — The Launch ($1,750)</option>
-          <option>24-Hour Brand Intensive — The Full Build ($4,500)</option>
           <option>Notable Essentials</option>
           <option>Notable Amplify</option>
           <option>Notable Vanguard (Men only — application required)</option>

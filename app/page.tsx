@@ -102,7 +102,7 @@ export default function Home() {
             </div>
 
             <div className="flex gap-3 flex-wrap items-center">
-              <Link href="/contact"
+              <Link href="/intensive"
                 className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
                 Book Your Intensive
               </Link>

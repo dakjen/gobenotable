@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="bg-ink min-h-[calc(100vh-94px)] flex items-center justify-center px-6 md:px-16 py-20 relative overflow-hidden mt-[36px]">
+      <section className="bg-ink min-h-[60vh] flex items-center justify-center px-6 md:px-16 py-14 relative overflow-hidden mt-[36px]">
         {/* Background image */}
         <Image src="/images/hero-silhouette.jpg" alt="" fill className="object-cover object-center opacity-[0.55] pointer-events-none" sizes="100vw" />
         {/* Dark overlay for text readability */}
@@ -61,126 +61,101 @@ export default function Home() {
       </section>
 
       {/* 24-HOUR BRAND INTENSIVE — LIMITED TIME PROMO */}
-      <section className="relative bg-ink py-16 md:py-24 px-6 md:px-16 overflow-hidden border-t border-b border-crimson/30">
-        {/* Large background text */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-display font-black italic text-white opacity-[0.02] whitespace-nowrap"
-            style={{ fontSize: "clamp(120px,20vw,260px)", letterSpacing: "-8px" }}>
-            24 HOURS
-          </span>
-        </div>
+      <section className="relative bg-ink py-10 md:py-12 px-6 md:px-16 overflow-hidden border-t border-b border-crimson/30">
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-10 md:gap-14 items-start">
+          {/* Left — Headline & CTA */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="inline-block bg-crimson text-white text-[9px] font-bold tracking-[3px] uppercase px-3 py-1">
+                Limited Availability
+              </span>
+              <span className="text-[10px] font-medium tracking-[3px] uppercase text-crimson/70">
+                2 / Month
+              </span>
+            </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto">
-          {/* Badge */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="inline-block bg-crimson text-white text-[9px] font-bold tracking-[3px] uppercase px-4 py-1.5">
-              Limited Availability
-            </span>
-            <span className="text-[10px] font-medium tracking-[3px] uppercase text-crimson/70">
-              2 Spots Per Month
-            </span>
+            <h2 className="font-display font-black text-white leading-[1.05] tracking-[-1.5px] mb-2"
+              style={{ fontSize: "clamp(26px,4vw,42px)" }}>
+              The 24-Hour <em className="font-display font-normal italic text-crimson">Brand Intensive.</em>
+            </h2>
+            <p className="font-sans font-light text-[#777] tracking-wide text-[14px] mb-4">
+              Give Us 24 Hours. Walk Away With Your Brand.
+            </p>
+            <div className="w-7 h-[1.5px] bg-crimson mb-4" />
+            <p className="text-[12px] font-light text-[#999] leading-[1.85] mb-6">
+              A focused, high-output engagement for women founders who are done waiting. Book your day, show up for a 1-hour kickoff, and walk away 24 hours later with everything built and ready to use.
+            </p>
+
+            {/* How It Works — inline */}
+            <div className="grid grid-cols-2 gap-x-5 gap-y-3 mb-6">
+              {[
+                { step: "01", title: "Book Your Date" },
+                { step: "02", title: "Kickoff Call" },
+                { step: "03", title: "We Build" },
+                { step: "04", title: "Review & Launch" },
+              ].map((s) => (
+                <div key={s.step} className="flex items-center gap-2">
+                  <span className="font-display font-normal italic text-crimson/40 text-[18px] leading-none">{s.step}</span>
+                  <span className="text-[10px] font-semibold text-white tracking-wide">{s.title}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-3 flex-wrap items-center">
+              <Link href="/contact"
+                className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
+                Book Your Intensive
+              </Link>
+              <span className="text-[10px] font-light text-[#555]">
+                50% deposit to reserve
+              </span>
+            </div>
           </div>
 
-          <h2 className="font-display font-black text-white leading-[1.0] tracking-[-2px] mb-3"
-            style={{ fontSize: "clamp(36px,6vw,64px)" }}>
-            The 24-Hour<br />
-            <em className="font-display font-normal italic text-crimson">Brand Intensive.</em>
-          </h2>
-          <p className="font-sans font-light text-[#888] tracking-wide text-lg mb-8 max-w-xl">
-            Give Us 24 Hours. Walk Away With Your Brand.
-          </p>
-
-          <div className="w-10 h-[2px] bg-crimson mb-10" />
-
-          <p className="text-[14px] font-light text-[#999] leading-[1.9] max-w-2xl mb-10">
-            A focused, high-output engagement built for women founders who are done waiting to &ldquo;get around to&rdquo; their brand. Book your day, show up for a 1-hour kickoff call, and walk away 24 hours later with everything built, reviewed, and ready to use.
-          </p>
-
-          {/* Two Tiers */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] mb-12">
+          {/* Right — Two Tier Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[2px]">
             {/* Tier 1 */}
-            <div className="bg-[#1a1a1a] p-8 md:p-10 flex flex-col">
-              <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">
-                Tier 1
-              </div>
-              <div className="font-display font-bold text-white text-[22px] leading-tight mb-1">
-                The Launch
-              </div>
-              <div className="text-[28px] font-bold text-crimson mb-4">$1,750</div>
-              <div className="w-6 h-[1.5px] bg-crimson mb-5" />
-              <p className="text-[12px] font-light text-[#888] leading-[1.85] mb-6">
-                Everything you need to show up online and on LinkedIn — built in one day.
-              </p>
-              <ul className="space-y-2.5 mb-6 flex-1">
+            <div className="bg-[#1a1a1a] p-5 md:p-6 flex flex-col">
+              <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-1.5">Tier 1</div>
+              <div className="font-display font-bold text-white text-[18px] leading-tight mb-0.5">The Launch</div>
+              <div className="text-[22px] font-bold text-crimson mb-2">$1,750</div>
+              <div className="w-5 h-[1.5px] bg-crimson mb-3" />
+              <ul className="space-y-1.5 flex-1">
                 {[
-                  "New Website (1–4 pages, fully designed & live)",
-                  "2–4 Branded Business Templates",
-                  "30 Days of LinkedIn Content",
+                  "Website (1–4 pages, live)",
+                  "2–4 Branded Templates",
+                  "30 Days LinkedIn Content",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span className="text-crimson text-sm mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-[12px] font-light text-[#aaa] leading-[1.7]">{item}</span>
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-crimson text-xs mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-[11px] font-light text-[#aaa] leading-[1.6]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Tier 2 */}
-            <div className="bg-[#1a1a1a] p-8 md:p-10 flex flex-col relative">
-              <div className="absolute top-0 right-0 bg-crimson text-white text-[8px] font-semibold tracking-[2px] uppercase px-3.5 py-1.5">
+            <div className="bg-[#1a1a1a] p-5 md:p-6 flex flex-col relative">
+              <div className="absolute top-0 right-0 bg-crimson text-white text-[7px] font-semibold tracking-[2px] uppercase px-2.5 py-1">
                 Full Build
               </div>
-              <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">
-                Tier 2
-              </div>
-              <div className="font-display font-bold text-white text-[22px] leading-tight mb-1">
-                The Full Build
-              </div>
-              <div className="text-[28px] font-bold text-crimson mb-4">$4,500</div>
-              <div className="w-6 h-[1.5px] bg-crimson mb-5" />
-              <p className="text-[12px] font-light text-[#888] leading-[1.85] mb-6">
-                Everything in Tier 1, plus the brand deliverables that get you in the room.
-              </p>
-              <ul className="space-y-2.5 mb-6 flex-1">
+              <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-1.5">Tier 2</div>
+              <div className="font-display font-bold text-white text-[18px] leading-tight mb-0.5">The Full Build</div>
+              <div className="text-[22px] font-bold text-crimson mb-2">$4,500</div>
+              <div className="w-5 h-[1.5px] bg-crimson mb-3" />
+              <ul className="space-y-1.5 flex-1">
                 {[
                   "Everything in The Launch",
-                  "3 Brand Deliverables (qual pages, capability statement, bio, & more)",
+                  "3 Brand Deliverables",
                   "90-Day Marketing Plan",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span className="text-crimson text-sm mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-[12px] font-light text-[#aaa] leading-[1.7]">{item}</span>
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-crimson text-xs mt-0.5 flex-shrink-0">✓</span>
+                    <span className="text-[11px] font-light text-[#aaa] leading-[1.6]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-
-          {/* How It Works — Compact */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {[
-              { step: "01", title: "Book Your Date", desc: "Reserve in advance. 2 spots/month." },
-              { step: "02", title: "Kickoff Call", desc: "1-hour alignment call starts the clock." },
-              { step: "03", title: "We Build", desc: "24 hours of focused execution." },
-              { step: "04", title: "Review & Launch", desc: "Everything delivered. Brand in hand." },
-            ].map((s) => (
-              <div key={s.step}>
-                <div className="font-display font-normal italic text-crimson/40 text-[28px] leading-none mb-2">{s.step}</div>
-                <div className="text-[11px] font-semibold text-white tracking-wide mb-1">{s.title}</div>
-                <div className="text-[11px] font-light text-[#666] leading-[1.7]">{s.desc}</div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="flex gap-3 flex-wrap items-center">
-            <Link href="/contact"
-              className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-8 py-4 no-underline hover:bg-crimson2 transition-colors duration-200">
-              Book Your Intensive
-            </Link>
-            <span className="text-[11px] font-light text-[#555]">
-              50% deposit to reserve · Balance due morning of kickoff
-            </span>
           </div>
         </div>
       </section>

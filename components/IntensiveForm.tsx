@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function IntensiveForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
   const f = "bg-white border border-warm text-ink font-sans text-[13px] font-light px-4 py-3.5 outline-none transition-all duration-200 focus:border-crimson w-full resize-none appearance-none placeholder:text-[#bbb]";
   const l = "text-[10px] font-semibold tracking-[3px] uppercase text-mauve";
 
@@ -12,6 +13,23 @@ export default function IntensiveForm() {
     setSubmitting(true);
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    // Upload files first
+    const uploadedUrls: string[] = [];
+    for (const file of files) {
+      try {
+        const res = await fetch(`/api/intensive/upload?filename=${encodeURIComponent(file.name)}`, {
+          method: "POST",
+          body: file,
+        });
+        if (res.ok) {
+          const { url } = await res.json();
+          uploadedUrls.push(url);
+        }
+      } catch {
+        // continue with other files
+      }
+    }
 
     try {
       const res = await fetch("/api/intensive", {
@@ -28,6 +46,7 @@ export default function IntensiveForm() {
           website: data.get("website"),
           businessDescription: data.get("businessDescription"),
           goals: data.get("goals"),
+          fileUrls: uploadedUrls,
         }),
       });
       if (res.ok) setSubmitted(true);
@@ -35,6 +54,16 @@ export default function IntensiveForm() {
       setSubmitted(true);
     }
     setSubmitting(false);
+  }
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e.target.files) {
+      setFiles(Array.from(e.target.files));
+    }
+  }
+
+  function removeFile(index: number) {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
   }
 
   return (
@@ -53,8 +82,8 @@ export default function IntensiveForm() {
       </div>
       <div className="flex flex-col gap-2">
         <label className={l}>Which Tier Are You Interested In?</label>
-        <select name="tier" required className={f}>
-          <option value="" disabled selected>Select a tier</option>
+        <select name="tier" required className={f} defaultValue="">
+          <option value="" disabled>Select a tier</option>
           <option value="The Launch — $1,750">Tier 1 — The Launch ($1,750)</option>
           <option value="The Foundation — $4,500">Tier 2 — The Foundation ($4,500)</option>
           <option value="Not sure yet">Not sure yet — help me decide</option>
@@ -73,10 +102,33 @@ export default function IntensiveForm() {
         <label className={l}>What Are You Hoping to Walk Away With?</label>
         <textarea name="goals" rows={4} placeholder="What's the goal? A website? LinkedIn presence? Deliverables for an upcoming pitch? Tell us everything." required className={f} />
       </div>
+      <div className="flex flex-col gap-2">
+        <label className={l}>Upload Brand Materials (Optional)</label>
+        <p className="text-[11px] font-light text-[#999] -mt-1">Logos, quals packages, pitch decks, headshots, brand guidelines — anything you have. PDF, PNG, JPG, DOCX accepted.</p>
+        <input
+          type="file"
+          multiple
+          accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.ppt,.pptx"
+          onChange={handleFileChange}
+          className="text-[13px] font-light text-[#666] file:mr-3 file:py-2 file:px-4 file:border file:border-warm file:bg-white file:text-[10px] file:font-semibold file:tracking-[2px] file:uppercase file:text-mauve file:cursor-pointer hover:file:bg-bone file:transition-colors"
+        />
+        {files.length > 0 && (
+          <div className="flex flex-col gap-1.5 mt-1">
+            {files.map((file, i) => (
+              <div key={i} className="flex items-center gap-2 text-[12px] font-light text-[#666]">
+                <span>{file.name}</span>
+                <button type="button" onClick={() => removeFile(i)} className="text-crimson text-[10px] font-semibold hover:underline cursor-pointer bg-transparent border-none p-0">
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
       <div className="flex items-center gap-5 flex-wrap pt-1">
         {!submitted ? (
           <button type="submit" disabled={submitting} className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 hover:bg-crimson2 transition-colors duration-200 cursor-pointer border-none">
-            {submitting ? "Submitting..." : "Reserve My Intensive"}
+            {submitting ? (files.length > 0 ? "Uploading & Submitting..." : "Submitting...") : "Reserve My Intensive"}
           </button>
         ) : (
           <div className="flex items-center gap-3 flex-wrap">

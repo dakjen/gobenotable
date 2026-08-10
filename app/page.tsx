@@ -33,7 +33,7 @@ export default function Home() {
             secret in their industry. Qualifications packages, decks, and websites
             that get you in the room — and a platform that makes the expertise
             you&apos;ve always had known, monetized, and{" "}
-            <em className="font-display font-normal italic text-crimson">notable</em>. From $350.
+            <em className="font-display font-normal italic text-crimson">notable</em>.
           </p>
 
           <div className="flex gap-3 flex-wrap mb-12 fade-up-delay-4">

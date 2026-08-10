@@ -54,10 +54,10 @@ export default function Footer() {
             Contact
           </h5>
           <a
-            href="mailto:hello@gobenotable.com"
+            href="mailto:admin@gobenotable.com"
             className="block text-[12px] font-light text-[#777] no-underline hover:text-white transition-colors duration-200 mb-2"
           >
-            hello@gobenotable.com
+            admin@gobenotable.com
           </a>
           <a
             href="https://gobenotable.com"

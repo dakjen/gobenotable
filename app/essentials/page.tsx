@@ -3,24 +3,44 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
-export const metadata = { title: "Notable Essentials — Brand Foundation Packages" };
+export const metadata = { title: "Notable Essentials — Brand Collateral, Priced by the Piece" };
 
-const packages = [
+const groups = [
   {
-    name: "Ready 2 Roll", price: "From $1,000", timeline: "2–3 weeks",
-    desc: "Qual package, deck template, 1-page website. Everything you need to show up professionally and start pitching.",
-    dark: false,
+    heading: "Short documents",
+    note: "1–3 pages",
+    items: [
+      { item: "One-pager / sell sheet",   scope: "One service or offer",                          price: "$350" },
+      { item: "Executive bio / resume",   scope: "Speaker- and board-ready",                      price: "$350" },
+      { item: "Service promo / brochure", scope: "Sells one service, includes 50 printed copies", price: "$450" },
+      { item: "Line card / service menu", scope: "Everything you offer, at a glance",             price: "$450" },
+      { item: "Company profile",          scope: "2–3 pages: who you are, what you do, proof",    price: "$650" },
+    ],
   },
   {
-    name: "Get Loud", price: "From $1,750", timeline: "3–4 weeks",
-    desc: "Deeper qual package, completed deck pages, multi-page website with ongoing maintenance. The full mid-tier toolkit.",
-    dark: true,
+    heading: "Long documents",
+    note: "",
+    items: [
+      { item: "Branded proposal / SOW template",     scope: "Reusable proposal system",                    price: "$700" },
+      { item: "Brand style mini-guide",              scope: "Colors, type, logo usage",                    price: "$750" },
+      { item: "Capabilities / qualifications package", scope: "Team bios, resume, service menu, branding", price: "$2,000" },
+    ],
   },
   {
-    name: "Marquis", price: "From $3,000", timeline: "4 weeks",
-    desc: "Everything, fully completed — full qual package, full deck, premium website, and one year of maintenance included.",
-    dark: false,
+    heading: "Presentation and pitch",
+    note: "",
+    items: [
+      { item: "Branded deck template",       scope: "Reusable master slides",              price: "$600" },
+      { item: "Pitch / investor presentation", scope: "10–15 custom slides, built not templated", price: "$1,400" },
+    ],
   },
+];
+
+const terms = [
+  { t: "Turnaround", b: "1–2 weeks for a single item, 2–4 weeks for bundles" },
+  { t: "Revisions",  b: "Two rounds included" },
+  { t: "Payment",    b: "35% deposit, 65% on delivery — wire or ACH" },
+  { t: "Pricing",    b: "All prices are starting points" },
 ];
 
 export default function Essentials() {
@@ -29,7 +49,7 @@ export default function Essentials() {
       <PageHero
         eyebrow="Tier 1 · Brand Foundation"
         title={<>Notable <em className="font-display font-normal italic text-crimson">Essentials</em></>}
-        subtitle="Look the part. Walk into any room ready. Brand foundation packages that establish credibility, communicate value, and make it possible to pitch, present, and win. Starting at $1,000."
+        subtitle="Look the part. Walk into any room ready. Brand collateral that establishes credibility, communicates value, and makes it possible to pitch, present, and win. Starting at $350."
       />
 
       {/* INTRO */}
@@ -48,7 +68,7 @@ export default function Essentials() {
               Notable Essentials is the brand foundation every founder needs before she can grow. These are the tools that establish credibility, communicate value, and make it possible to pitch, present, and win — consistently and professionally.
             </p>
             <p className="text-[14px] font-light text-[#333] leading-[1.9]">
-              You bring the vision. We build the assets that make it real. All packages include wordsmithing and moderate editing throughout.
+              You bring the vision. We build the assets that make it real. Every piece includes wordsmithing and moderate editing throughout.
             </p>
           </div>
           <div>
@@ -65,51 +85,77 @@ export default function Essentials() {
         </div>
       </section>
 
-      {/* PACKAGES — quick picks */}
-      <section className="bg-bone pt-16 px-6 md:px-16 pb-0">
-        <div className="max-w-6xl mx-auto pb-10">
+      {/* PRICE SHEET */}
+      <section className="bg-bone pt-16 px-6 md:px-16 pb-16">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-2.5 mb-4">
             <span className="block w-4 h-px bg-crimson" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Quick Look</span>
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">What It Costs</span>
           </div>
           <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
-            Three Starting Points. <em className="font-display font-normal italic text-crimson">One Custom Fit.</em>
+            Priced by the <em className="font-display font-normal italic text-crimson">Piece.</em>
           </h2>
-          <p className="text-[14px] font-light text-[#444] max-w-[540px] leading-[1.85]">
-            If you&apos;re looking for a quick upgrade to how you show up, these are our three core offerings. But every founder is different — on your discovery call, we&apos;ll figure out exactly what you need and build the right scope for where you are.
+          <p className="text-[14px] font-light text-[#444] max-w-[540px] leading-[1.85] mb-12">
+            Every piece is priced on its own, so you buy exactly what you need and nothing you don&apos;t. On your discovery call we&apos;ll figure out which pieces do the most for where you are.
           </p>
-        </div>
-      </section>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px] bg-warm">
-        {packages.map((pkg) => (
-          <div key={pkg.name}
-            className={`flex flex-col p-9 md:p-11 ${pkg.dark ? "bg-ink" : "bg-bone"}`}>
-            <div className={`font-display font-bold text-[26px] mb-2 leading-[1.1] ${pkg.dark ? "text-white" : "text-ink"}`}>{pkg.name}</div>
-            <div className={`text-[28px] font-bold leading-none mb-1 ${pkg.dark ? "text-white" : "text-crimson"}`}>{pkg.price}</div>
-            <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#999] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
-            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#aaa]" : "text-[#444]"}`}>{pkg.desc}</p>
-            <Link href="/contact"
-              className={`self-start text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline transition-colors duration-200 ${
-                pkg.dark
-                  ? "bg-crimson text-white hover:bg-crimson2"
-                  : "bg-transparent border border-warm text-ink hover:bg-ink hover:text-white hover:border-ink"
-              }`}>
-              Let&apos;s Talk
+
+          {groups.map((g) => (
+            <div key={g.heading} className="mb-10 last:mb-0">
+              <div className="flex items-baseline gap-3 mb-1 pb-3 border-b-[2px] border-ink">
+                <h3 className="font-display font-bold text-ink text-[20px] md:text-[24px]">{g.heading}</h3>
+                {g.note && <span className="text-[11px] font-light italic text-mid">{g.note}</span>}
+              </div>
+              {g.items.map((row) => (
+                <div key={row.item} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4 border-b border-warm">
+                  <div className="text-[14px] font-semibold text-ink w-full sm:w-auto sm:flex-1 sm:min-w-[220px]">{row.item}</div>
+                  <div className="text-[13px] font-light text-[#444] flex-1 min-w-[200px]">{row.scope}</div>
+                  <div className="text-[20px] font-bold text-crimson whitespace-nowrap ml-auto">{row.price}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Custom quote */}
+          <div className="mt-10 bg-white border border-warm p-7 flex flex-wrap items-center justify-between gap-5">
+            <div className="max-w-[520px]">
+              <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-1.5">Custom Quote</div>
+              <div className="font-display font-bold text-[20px] text-ink mb-1.5">Project profiles and case studies</div>
+              <p className="text-[13px] font-light text-[#444] leading-[1.7]">
+                Multi-page, data-rich, flagship-grade. Scoped individually.
+              </p>
+            </div>
+            <Link href="/contact" className="bg-transparent border border-warm text-ink text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-ink hover:text-white hover:border-ink transition-colors duration-200">
+              Request a Quote
             </Link>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      {/* TERMS */}
+      <section className="bg-ink py-12 md:py-14 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson mb-7">How It Works</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {terms.map((t) => (
+              <div key={t.t} className="border-l-2 border-crimson pl-4">
+                <div className="text-[10px] font-semibold tracking-[2.5px] uppercase text-white mb-1.5">{t.t}</div>
+                <div className="text-[13px] font-light text-[#aaa] leading-[1.7]">{t.b}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CUSTOM FIT CALLOUT */}
       <div className="bg-bone px-6 md:px-16 py-10 border-t-[2px] border-warm">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-[500px]">
-            <div className="font-display font-bold text-[20px] text-ink mb-2">Not sure which one fits?</div>
+            <div className="font-display font-bold text-[20px] text-ink mb-2">Not sure what you need?</div>
             <p className="text-[13px] font-light text-[#444] leading-[1.75]">
-              That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right package around you. All prices shown are starting points. Your scope is custom.
+              That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right scope around you. All prices shown are starting points.
             </p>
             <p className="text-[13px] font-normal text-ink leading-[1.75] mt-3">
-              Every Essentials package includes revisions until it&apos;s pitch-ready. You leave with assets in hand — not a deck of ideas.
+              Every Essentials engagement includes revisions until it&apos;s pitch-ready. You leave with assets in hand — not a deck of ideas.
             </p>
           </div>
           <Link href="/contact" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200 flex-shrink-0">
@@ -144,7 +190,7 @@ export default function Essentials() {
             Standalone <em className="font-display font-normal italic text-crimson">Intensives</em>
           </h2>
           <p className="text-[14px] font-light text-[#aaa] max-w-[520px] leading-[1.85] mb-10">
-            These can be added to any Essentials package or purchased on their own. Each one is designed to move the needle on a specific part of your platform.
+            These can be added to any Essentials engagement or purchased on their own. Each one is designed to move the needle on a specific part of your platform.
           </p>
         </div>
       </section>

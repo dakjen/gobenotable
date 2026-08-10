@@ -32,7 +32,7 @@ export default function Home() {
             For high-performing women founders who are done being the best-kept
             secret in their industry. Qualifications packages, decks, and websites
             that get you in the room — and the platform that keeps you there.
-            From $1,000.
+            From $350.
           </p>
 
           <div className="flex gap-3 flex-wrap mb-12 fade-up-delay-4">
@@ -48,7 +48,7 @@ export default function Home() {
 
           <div className="flex gap-8 md:gap-12 flex-wrap">
             {[
-              { n: "$1K",  l: "Starting Point" },
+              { n: "$350",  l: "Starting Point" },
               { n: "6–8", l: "Week Amplify Build" },
               { n: "3",   l: "Service Tiers" },
             ].map((s) => (
@@ -249,9 +249,9 @@ export default function Home() {
           {
             tag: "Tier 1 · Brand Foundation",
             name: "Notable Essentials",
-            price: "From $1,000",
-            note: "Ready 2 Roll · Get Loud · Marquis",
-            desc: "Qualifications packages, decks, and websites that make you look the part from day one.",
+            price: "From $350",
+            note: "Priced by the piece · single items or a full kit",
+            desc: "Qualifications packages, decks, one-pagers, and websites that make you look the part from day one.",
             href: "/essentials",
             cta: "View Packages",
             dark: false,
@@ -338,7 +338,7 @@ export default function Home() {
           </div>
           <div>
             {[
-              "A founder enters with Ready 2 Roll — she needs a qual package before a pitch next month. We deliver it and she wins the contract.",
+              "A founder enters with a capabilities package — she needs it before a pitch next month. We deliver it and she wins the contract.",
               "Six months later she's back: she wants to start posting on LinkedIn and she's been thinking about a course. That's a LinkedIn Voice Intensive and a Notable Amplify engagement.",
               "A year later, her platform is running, her course is live, and she wants ongoing support. That's Amplify+ Ongoing.",
             ].map((p, i) => (

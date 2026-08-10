@@ -55,13 +55,13 @@ export default function About() {
                 <div className="text-[9px] font-semibold tracking-[3px] uppercase text-crimson mb-2">Tier 1 · Brand Foundation</div>
                 <div className="font-display font-bold text-ink text-[22px] mb-3 group-hover:text-crimson transition-colors duration-200">Notable Essentials</div>
                 <p className="text-[13px] font-light text-[#333] leading-[1.8] mb-3">
-                  This is where most clients start. Notable Essentials is the brand foundation that makes you look the part — qualifications packages, presentation decks, and websites that establish credibility and make it possible to pitch, present, and win. Whether you need a quick upgrade or a full brand toolkit, we scope it to where you are right now.
+                  This is where most clients start. Notable Essentials is the brand foundation that makes you look the part — capabilities packages, presentation decks, one-pagers, and websites that establish credibility and make it possible to pitch, present, and win. Everything is priced by the piece, so you can start with one document or build the whole kit.
                 </p>
                 <p className="text-[13px] font-light text-[#333] leading-[1.8] mb-4">
                   We also offer standalone a la carte intensives — LinkedIn Voice, Video Content, and Social Media Handbook &amp; 30-Day Plan — that can be added to any package or purchased on their own.
                 </p>
                 <div className="flex items-center gap-4">
-                  <span className="text-[20px] font-bold text-crimson">From $1,000</span>
+                  <span className="text-[20px] font-bold text-crimson">From $350</span>
                   <span className="text-[10px] font-semibold tracking-[2px] uppercase text-crimson group-hover:underline">View Essentials →</span>
                 </div>
               </Link>

@@ -61,7 +61,7 @@ export default function About() {
                   We also offer standalone a la carte intensives — LinkedIn Voice, Video Content, and Social Media Handbook &amp; 30-Day Plan — that can be added to any package or purchased on their own.
                 </p>
                 <div className="flex items-center gap-4">
-                  <span className="text-[20px] font-bold text-crimson">From $350</span>
+                  <span className="text-[20px] font-bold text-crimson">Priced by the piece</span>
                   <span className="text-[10px] font-semibold tracking-[2px] uppercase text-crimson group-hover:underline">View Essentials →</span>
                 </div>
               </Link>

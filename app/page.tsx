@@ -49,7 +49,7 @@ export default function Home() {
 
           <div className="flex gap-8 md:gap-12 flex-wrap">
             {[
-              { n: "$350",  l: "Starting Point" },
+              { n: "+237%", l: "Client Network Growth" },
               { n: "6–8", l: "Week Amplify Build" },
               { n: "3",   l: "Service Tiers" },
             ].map((s) => (
@@ -250,8 +250,8 @@ export default function Home() {
           {
             tag: "Tier 1 · Brand Foundation",
             name: "Notable Essentials",
-            price: "From $350",
-            note: "Priced by the piece · single items or a full kit",
+            price: "Priced by the Piece",
+            note: "Single documents or a full kit · quoted to scope",
             desc: "Qualifications packages, decks, one-pagers, and websites that make you look the part from day one.",
             href: "/essentials",
             cta: "View Packages",

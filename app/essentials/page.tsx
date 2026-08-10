@@ -49,7 +49,7 @@ export default function Essentials() {
       <PageHero
         eyebrow="Tier 1 · Brand Foundation"
         title={<>Notable <em className="font-display font-normal italic text-crimson">Essentials</em></>}
-        subtitle="Look the part. Walk into any room ready. Brand collateral that establishes credibility, communicates value, and makes it possible to pitch, present, and win. Starting at $350."
+        subtitle="Look the part. Walk into any room ready. Brand collateral that establishes credibility, communicates value, and makes it possible to pitch, present, and win — priced by the piece, so you buy exactly what you need."
       />
 
       {/* INTRO */}
@@ -124,7 +124,7 @@ export default function Essentials() {
                 Multi-page, data-rich, flagship-grade. Scoped individually.
               </p>
             </div>
-            <Link href="/contact" className="bg-transparent border border-warm text-ink text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-ink hover:text-white hover:border-ink transition-colors duration-200">
+            <Link href="/quote" className="bg-transparent border border-warm text-ink text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-ink hover:text-white hover:border-ink transition-colors duration-200">
               Request a Quote
             </Link>
           </div>
@@ -158,9 +158,14 @@ export default function Essentials() {
               Every Essentials engagement includes revisions until it&apos;s pitch-ready. You leave with assets in hand — not a deck of ideas.
             </p>
           </div>
-          <Link href="/contact" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200 flex-shrink-0">
-            Book a Discovery Call
-          </Link>
+          <div className="flex gap-3 flex-wrap flex-shrink-0">
+            <Link href="/quote" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
+              Request a Quote
+            </Link>
+            <Link href="/contact" className="bg-transparent border border-warm text-ink text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-ink hover:text-white hover:border-ink transition-colors duration-200">
+              Book a Discovery Call
+            </Link>
+          </div>
         </div>
       </div>
 

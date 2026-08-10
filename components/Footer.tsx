@@ -7,6 +7,7 @@ const pages = [
   { label: "Amplify",    href: "/amplify" },
   { label: "Results",    href: "/results" },
   { label: "Vanguard",   href: "/vanguard" },
+  { label: "Request a Quote", href: "/quote" },
   { label: "Book a Call",href: "/contact" },
 ];
 

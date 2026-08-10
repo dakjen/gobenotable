@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import AttributionTracker from "@/components/AttributionTracker";
 import Nav from "@/components/Nav";
 import Ticker from "@/components/Ticker";
 import Footer from "@/components/Footer";
@@ -140,6 +141,7 @@ export default function RootLayout({
         <Ticker />
         <main className="pt-[58px]">{children}</main>
         <Footer />
+        <AttributionTracker />
         <Analytics />
       </body>
     </html>

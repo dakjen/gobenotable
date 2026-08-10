@@ -54,6 +54,12 @@ CREATE TABLE IF NOT EXISTS quote_requests (
   budget TEXT,
   details TEXT,
   items TEXT NOT NULL,
+  attr_source TEXT,
+  attr_medium TEXT,
+  attr_campaign TEXT,
+  attr_referrer TEXT,
+  attr_landing_page TEXT,
+  attr_submitted_from TEXT,
   status TEXT DEFAULT 'new' CHECK (status IN ('new', 'quoted', 'won', 'lost')),
   created_at TIMESTAMPTZ DEFAULT NOW()
 );

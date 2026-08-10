@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import HoneypotFields from "@/components/HoneypotFields";
+import { getAttribution } from "@/lib/attribution";
 import { collateralGroups, intensives } from "@/lib/collateral";
 
 const inputClass =
@@ -34,6 +35,7 @@ export default function QuoteForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           company_website: data.get("company_website"),
+          attribution: getAttribution(),
           rendered_at: data.get("rendered_at"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),

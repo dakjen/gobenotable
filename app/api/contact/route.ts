@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
   try {
@@ -28,10 +29,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true });
     }
 
+    const attr = attributionFromPayload(body);
     const sql = getDb();
     await sql`
-      INSERT INTO contact_submissions (first_name, last_name, email, phone, service, message)
-      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${service || null}, ${message || null})
+      INSERT INTO contact_submissions (first_name, last_name, email, phone, service, message, attr_source, attr_medium, attr_campaign, attr_referrer, attr_landing_page, attr_submitted_from)
+      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${service || null}, ${message || null}, ${attr.source}, ${attr.medium}, ${attr.campaign}, ${attr.referrer}, ${attr.landingPage}, ${attr.submittedFrom})
     `;
 
     const fullName = `${firstName} ${lastName}`;
@@ -69,6 +71,7 @@ export async function POST(req: Request) {
             ["Phone", phone],
             ["Interested in", service],
             ["Message", message],
+            ["Found you via", attributionSummary(attr)],
           ]) + p("Reply directly to this email to reach them."),
         cta: { label: "Open Admin Dashboard", url: "https://gobenotable.com/admin" },
       }),

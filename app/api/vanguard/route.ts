@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
   try {
@@ -26,10 +27,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true });
     }
 
+    const attr = attributionFromPayload(body);
     const sql = getDb();
     await sql`
-      INSERT INTO vanguard_applications (first_name, last_name, email, phone, company, industry, work_impact, brings_others, linkedin, website)
-      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${industry || null}, ${workImpact || null}, ${bringsOthers || null}, ${linkedin || null}, ${website || null})
+      INSERT INTO vanguard_applications (first_name, last_name, email, phone, company, industry, work_impact, brings_others, linkedin, website, attr_source, attr_medium, attr_campaign, attr_referrer, attr_landing_page, attr_submitted_from)
+      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${industry || null}, ${workImpact || null}, ${bringsOthers || null}, ${linkedin || null}, ${website || null}, ${attr.source}, ${attr.medium}, ${attr.campaign}, ${attr.referrer}, ${attr.landingPage}, ${attr.submittedFrom})
     `;
 
     const fullName = `${firstName} ${lastName}`;
@@ -75,6 +77,7 @@ export async function POST(req: Request) {
             ["Website", website],
             ["Work & impact", workImpact],
             ["Brings others with him", bringsOthers],
+            ["Found you via", attributionSummary(attr)],
           ]) + p("Reply directly to this email to reach the applicant."),
         cta: { label: "Open Admin Dashboard", url: "https://gobenotable.com/admin" },
       }),

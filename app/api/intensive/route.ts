@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
   try {
@@ -26,12 +27,13 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true });
     }
 
+    const attr = attributionFromPayload(body);
     const sql = getDb();
     const filesJson = fileUrls && fileUrls.length > 0 ? JSON.stringify(fileUrls) : null;
 
     await sql`
-      INSERT INTO intensive_submissions (first_name, last_name, email, phone, company, tier, preferred_date, website, business_description, goals, file_urls)
-      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${tier}, ${preferredDate || null}, ${website || null}, ${businessDescription || null}, ${goals || null}, ${filesJson})
+      INSERT INTO intensive_submissions (first_name, last_name, email, phone, company, tier, preferred_date, website, business_description, goals, file_urls, attr_source, attr_medium, attr_campaign, attr_referrer, attr_landing_page, attr_submitted_from)
+      VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${tier}, ${preferredDate || null}, ${website || null}, ${businessDescription || null}, ${goals || null}, ${filesJson}, ${attr.source}, ${attr.medium}, ${attr.campaign}, ${attr.referrer}, ${attr.landingPage}, ${attr.submittedFrom})
     `;
 
     const fullName = `${firstName} ${lastName}`;
@@ -74,6 +76,7 @@ export async function POST(req: Request) {
             ["Business", businessDescription],
             ["Goals", goals],
             ["Files uploaded", fileCount > 0 ? `${fileCount} file${fileCount === 1 ? "" : "s"}` : null],
+            ["Found you via", attributionSummary(attr)],
           ]) +
           (fileCount > 0
             ? `<ul style="margin:4px 0 14px 0;padding-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.8;color:#333333;">${(fileUrls as string[])

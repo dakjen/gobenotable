@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import HoneypotFields from "@/components/HoneypotFields";
+import { getAttribution } from "@/lib/attribution";
 
 type Props = {
   /** "dark" for the footer and ink sections, "light" for bone/white bands. */
@@ -29,6 +30,7 @@ export default function NewsletterSignup({ tone = "dark", source = "site" }: Pro
           email: data.get("email"),
           firstName: data.get("firstName"),
           company_website: data.get("company_website"),
+          attribution: getAttribution(),
           rendered_at: data.get("rendered_at"),
           source,
         }),

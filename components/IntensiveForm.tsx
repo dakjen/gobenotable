@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import HoneypotFields from "@/components/HoneypotFields";
+import { getAttribution } from "@/lib/attribution";
 
 export default function IntensiveForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -38,6 +39,7 @@ export default function IntensiveForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           company_website: data.get("company_website"),
+          attribution: getAttribution(),
           rendered_at: data.get("rendered_at"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),

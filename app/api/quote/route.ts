@@ -3,6 +3,7 @@ import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC, escapeHtml } from "@/lib/email";
 import { labelForId } from "@/lib/collateral";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
   try {
@@ -30,14 +31,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true });
     }
 
+    const attr = attributionFromPayload(body);
     // The email is the delivery mechanism; the row is the record. If the
     // insert fails (table not migrated yet, database down) we still want the
     // lead to reach the inbox rather than losing it to a 500.
     try {
       const sql = getDb();
       await sql`
-        INSERT INTO quote_requests (first_name, last_name, email, phone, company, website, timeline, budget, details, items)
-        VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${website || null}, ${timeline || null}, ${budget || null}, ${details || null}, ${JSON.stringify(items)})
+        INSERT INTO quote_requests (first_name, last_name, email, phone, company, website, timeline, budget, details, items, attr_source, attr_medium, attr_campaign, attr_referrer, attr_landing_page, attr_submitted_from)
+        VALUES (${firstName}, ${lastName}, ${email}, ${phone || null}, ${company || null}, ${website || null}, ${timeline || null}, ${budget || null}, ${details || null}, ${JSON.stringify(items)}, ${attr.source}, ${attr.medium}, ${attr.campaign}, ${attr.referrer}, ${attr.landingPage}, ${attr.submittedFrom})
       `;
     } catch (dbError) {
       console.error("Quote request: insert failed, continuing to email", dbError);
@@ -88,6 +90,7 @@ export async function POST(req: Request) {
             ["Timeline", timeline],
             ["Budget", budget],
             ["Details", details],
+            ["Found you via", attributionSummary(attr)],
           ]) +
           p("Reply directly to this email to send the quote."),
         cta: { label: "Open Admin Dashboard", url: "https://gobenotable.com/admin" },

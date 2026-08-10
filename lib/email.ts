@@ -199,6 +199,43 @@ export function detailTable(rows: Array<[string, string | null | undefined]>): s
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 4px 0;">${cells}</table>`;
 }
 
+/** Proof numbers as a bordered row — reads at a glance before any copy does. */
+export function statRow(stats: Array<{ figure: string; label: string }>): string {
+  const cells = stats
+    .map(
+      (s) => `
+      <td style="padding:0 14px 0 0;vertical-align:top;">
+        <div style="font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:26px;line-height:1;color:#8B1A34;">${escapeHtml(s.figure)}</div>
+        <div style="font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#7B4F5E;padding-top:5px;">${escapeHtml(s.label)}</div>
+      </td>`
+    )
+    .join("");
+
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 20px 0;border-top:1px solid #E8E3DE;border-bottom:1px solid #E8E3DE;"><tr><td style="padding:18px 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>${cells}</tr></table></td></tr></table>`;
+}
+
+/** Labelled links with a line of context each. */
+export function linkList(items: Array<{ label: string; url: string; blurb?: string }>): string {
+  const rows = items
+    .map(
+      (i) => `
+      <tr>
+        <td style="padding:10px 0;border-bottom:1px solid #E8E3DE;">
+          <a href="${escapeHtml(i.url)}" style="font-family:Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;color:#8B1A34;text-decoration:none;">${escapeHtml(i.label)} &rarr;</a>
+          ${i.blurb ? `<div style="font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#666666;padding-top:3px;">${escapeHtml(i.blurb)}</div>` : ""}
+        </td>
+      </tr>`
+    )
+    .join("");
+
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px 0;">${rows}</table>`;
+}
+
+/** Small section heading inside an email body. */
+export function subhead(text: string): string {
+  return `<div style="font-family:Helvetica,Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#0F0F0F;padding:14px 0 8px 0;">${escapeHtml(text)}</div>`;
+}
+
 export function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")

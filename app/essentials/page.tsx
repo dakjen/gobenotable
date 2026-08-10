@@ -86,8 +86,8 @@ export default function Essentials() {
             className={`flex flex-col p-9 md:p-11 ${pkg.dark ? "bg-ink" : "bg-bone"}`}>
             <div className={`font-display font-bold text-[26px] mb-2 leading-[1.1] ${pkg.dark ? "text-white" : "text-ink"}`}>{pkg.name}</div>
             <div className={`text-[28px] font-bold leading-none mb-1 ${pkg.dark ? "text-white" : "text-crimson"}`}>{pkg.price}</div>
-            <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#333] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
-            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#666]" : "text-[#444]"}`}>{pkg.desc}</p>
+            <div className={`text-[11px] mb-5 pb-5 border-b ${pkg.dark ? "text-[#999] border-[#222]" : "text-mid border-warm"}`}>{pkg.timeline}</div>
+            <p className={`text-[13px] font-light leading-[1.85] mb-6 flex-1 ${pkg.dark ? "text-[#aaa]" : "text-[#444]"}`}>{pkg.desc}</p>
             <Link href="/contact"
               className={`self-start text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline transition-colors duration-200 ${
                 pkg.dark
@@ -106,7 +106,10 @@ export default function Essentials() {
           <div className="max-w-[500px]">
             <div className="font-display font-bold text-[20px] text-ink mb-2">Not sure which one fits?</div>
             <p className="text-[13px] font-light text-[#444] leading-[1.75]">
-              That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right package around you. These are starting points. Your scope is custom.
+              That&apos;s the whole point of the discovery call. We don&apos;t do cookie-cutter — we listen to where you are, where you&apos;re going, and build the right package around you. All prices shown are starting points. Your scope is custom.
+            </p>
+            <p className="text-[13px] font-normal text-ink leading-[1.75] mt-3">
+              Every Essentials package includes revisions until it&apos;s pitch-ready. You leave with assets in hand — not a deck of ideas.
             </p>
           </div>
           <Link href="/contact" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200 flex-shrink-0">
@@ -140,7 +143,7 @@ export default function Essentials() {
           <h2 className="font-display font-bold text-white leading-[1.1] tracking-[-0.5px] mb-3" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
             Standalone <em className="font-display font-normal italic text-crimson">Intensives</em>
           </h2>
-          <p className="text-[14px] font-light text-[#444] max-w-[520px] leading-[1.85] mb-10">
+          <p className="text-[14px] font-light text-[#aaa] max-w-[520px] leading-[1.85] mb-10">
             These can be added to any Essentials package or purchased on their own. Each one is designed to move the needle on a specific part of your platform.
           </p>
         </div>
@@ -151,18 +154,18 @@ export default function Essentials() {
           <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 01</div>
           <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">LinkedIn Voice Intensive</div>
           <div className="w-7 h-[1.5px] bg-crimson mb-5" />
-          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+          <p className="text-[13px] font-light text-[#aaa] leading-[1.85] mb-5 flex-1">
             LinkedIn is often the first place a potential client, investor, or partner checks you out. We rewrite your entire presence — profile, content strategy, and 2 months of posts, ready to publish.
           </p>
           <ul className="list-none mb-6">
             {["Full profile audit and rewrite", "Brand voice and content pillars", "2 months of posts — written and ready", "30-day content calendar", "Engagement and growth strategy", "60-minute strategy session"].map(item => (
-              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+              <li key={item} className="text-[12px] font-light text-[#bbb] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
                 <span className="absolute left-0 text-crimson">–</span>{item}
               </li>
             ))}
           </ul>
           <div className="text-[24px] font-bold text-white mb-1">$1,500+</div>
-          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <div className="text-[10px] text-[#999] mb-6">Standalone or add to any package</div>
           <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
             Get Started
           </Link>
@@ -173,18 +176,18 @@ export default function Essentials() {
           <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 02</div>
           <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">Video Content Intensive</div>
           <div className="w-7 h-[1.5px] bg-crimson mb-5" />
-          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+          <p className="text-[13px] font-light text-[#aaa] leading-[1.85] mb-5 flex-1">
             Short-form video is how the world discovers you. We develop your video content strategy, script your first batch, and give you a repeatable framework so you can keep showing up with confidence.
           </p>
           <ul className="list-none mb-6">
             {["Video content strategy and positioning", "Script development for first batch of videos", "Posting framework and cadence plan", "Platform-specific optimization guidance", "Brand voice alignment for video", "60-minute strategy session"].map(item => (
-              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+              <li key={item} className="text-[12px] font-light text-[#bbb] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
                 <span className="absolute left-0 text-crimson">–</span>{item}
               </li>
             ))}
           </ul>
           <div className="text-[24px] font-bold text-white mb-1">$2,000+</div>
-          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <div className="text-[10px] text-[#999] mb-6">Standalone or add to any package</div>
           <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
             Let&apos;s Talk
           </Link>
@@ -195,23 +198,64 @@ export default function Essentials() {
           <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">Intensive 03</div>
           <div className="font-display font-bold text-white text-[22px] leading-[1.15] mb-4">Social Media Handbook &amp; 30-Day Plan</div>
           <div className="w-7 h-[1.5px] bg-crimson mb-5" />
-          <p className="text-[13px] font-light text-[#555] leading-[1.85] mb-5 flex-1">
+          <p className="text-[13px] font-light text-[#aaa] leading-[1.85] mb-5 flex-1">
             Your complete social media playbook — brand voice guidelines, content categories, a full 30-day posting plan, and everything you need to show up consistently across platforms without second-guessing every post.
           </p>
           <ul className="list-none mb-6">
             {["Brand voice and social media guidelines", "Content pillar and category framework", "Full 30-day content calendar", "Post templates and caption frameworks", "Platform strategy and best practices", "Hashtag and engagement strategy"].map(item => (
-              <li key={item} className="text-[12px] font-light text-[#333] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
+              <li key={item} className="text-[12px] font-light text-[#bbb] py-1.5 pl-4 relative border-b border-[#1a1a1a] leading-[1.5]">
                 <span className="absolute left-0 text-crimson">–</span>{item}
               </li>
             ))}
           </ul>
           <div className="text-[24px] font-bold text-white mb-1">$2,750+</div>
-          <div className="text-[10px] text-[#444] mb-6">Standalone or add to any package</div>
+          <div className="text-[10px] text-[#999] mb-6">Standalone or add to any package</div>
           <Link href="/contact" className="self-start bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
             Let&apos;s Talk
           </Link>
         </div>
       </div>
+
+      {/* FIT / NEGATIVE QUALIFICATION */}
+      <section className="bg-white py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="block w-4 h-px bg-crimson" />
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Fit</span>
+          </div>
+          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-10" style={{ fontSize:"clamp(28px,3.5vw,44px)" }}>
+            Who This Is <em className="font-display font-normal italic text-crimson">For</em>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px] bg-warm">
+            <div className="bg-white p-8 md:p-10">
+              <div className="text-[10px] font-semibold tracking-[3px] uppercase text-crimson mb-5">This is for you if</div>
+              {[
+                "You are winning work but losing bids to firms with better materials",
+                "You have the credentials and none of the collateral",
+                "You want assets in hand, not a strategy deck",
+              ].map(item => (
+                <div key={item} className="flex gap-3 py-3 border-b border-warm last:border-b-0">
+                  <span className="text-crimson font-bold flex-shrink-0">—</span>
+                  <p className="text-[13px] font-light text-[#333] leading-[1.7]">{item}</p>
+                </div>
+              ))}
+            </div>
+            <div className="bg-bone p-8 md:p-10">
+              <div className="text-[10px] font-semibold tracking-[3px] uppercase text-mauve mb-5">This is not for you if</div>
+              {[
+                "You want a logo and nothing else",
+                "You are pre-revenue and testing an idea",
+                "You want advice rather than execution",
+              ].map(item => (
+                <div key={item} className="flex gap-3 py-3 border-b border-warm last:border-b-0">
+                  <span className="text-mauve font-bold flex-shrink-0">—</span>
+                  <p className="text-[13px] font-light text-[#444] leading-[1.7]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CtaBand
         title="Ready to look the part?"

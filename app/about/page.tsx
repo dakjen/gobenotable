@@ -148,9 +148,9 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-[#1a1a1a]">
             {phases.map((p) => (
               <div key={p.n} className="bg-[#111] p-8">
-                <div className="font-display font-bold text-[#444] text-[48px] leading-none mb-3">{p.n}</div>
+                <div className="font-display font-bold text-[#3a3a3a] text-[48px] leading-none mb-3">{p.n}</div>
                 <div className="text-[11px] font-semibold tracking-[2.5px] uppercase text-crimson mb-3">{p.t}</div>
-                <div className="text-[13px] font-light text-[#444] leading-[1.75]">{p.b}</div>
+                <div className="text-[13px] font-light text-[#aaa] leading-[1.75]">{p.b}</div>
               </div>
             ))}
           </div>

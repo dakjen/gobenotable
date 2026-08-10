@@ -22,9 +22,9 @@ const deliverables = [
 ];
 
 const examples = [
-  { tag:"Example Engagement", name:"The Thought Leadership Foundation", desc:"Developer Playbook + 10 How-To Guides + Book Proposal + Agent List + 5 AI-Generated Podcast Episodes. For founders with deep domain expertise ready to become the recognized authority in their space.", price:"From $10,500" },
-  { tag:"Example Engagement", name:"The Platform Launch", desc:"LinkedIn Voice Strategy + Online Course Concept + Launch Package + 2 months of ready-to-publish posts. For founders ready to monetize their expertise and build an active online audience.", price:"From $12,000" },
-  { tag:"Example Engagement", name:"The Full Build", desc:"Book Proposal + LinkedIn Content Strategy + Blog Launch + Fireside Chat Series + New Line of Business package. For founders building a multi-channel platform with multiple revenue streams.", price:"From $16,000–$20,000" },
+  { tag:"Example Engagement", name:"The Thought Leadership Foundation", desc:"Developer Playbook + 10 How-To Guides + Book Proposal + Agent List + 5 AI-Generated Podcast Episodes. For founders with deep domain expertise ready to become the recognized authority in their space.", price:"Scoped on your call" },
+  { tag:"Example Engagement", name:"The Platform Launch", desc:"LinkedIn Voice Strategy + Online Course Concept + Launch Package + 2 months of ready-to-publish posts. For founders ready to monetize their expertise and build an active online audience.", price:"Scoped on your call" },
+  { tag:"Example Engagement", name:"The Full Build", desc:"Book Proposal + LinkedIn Content Strategy + Blog Launch + Fireside Chat Series + New Line of Business package. For founders building a multi-channel platform with multiple revenue streams.", price:"Scoped on your call" },
 ];
 
 export default function Amplify() {
@@ -48,14 +48,14 @@ export default function Amplify() {
               Not a Strategy.<br /><em className="font-display font-normal italic text-crimson">The Actual Thing.</em>
             </h2>
             <div className="w-8 h-0.5 bg-crimson my-5" />
-            <p className="text-[14px] font-light text-[#444] leading-[1.9] mb-4">
+            <p className="text-[14px] font-light text-[#aaa] leading-[1.9] mb-4">
               Notable Amplify is not a brand refresh. This is a platform and revenue stream buildout — designed for the founder who has done the work, built the expertise, and is ready to be recognized and compensated at a level that matches her actual impact.
             </p>
-            <p className="text-[14px] font-light text-[#444] leading-[1.9] mb-8">
+            <p className="text-[14px] font-light text-[#aaa] leading-[1.9] mb-8">
               We begin with a deep assessment, identify the monetizable opportunities she&apos;s sitting on, then build them. Not a strategy deck. The actual thing.
             </p>
             <div className="text-[28px] font-bold text-white mb-1">From $4,000</div>
-            <div className="text-[11px] font-light text-[#444] tracking-wide mb-7">Custom-scoped per engagement · 6–8 week timeline</div>
+            <div className="text-[11px] font-light text-[#999] tracking-wide mb-7">Custom-scoped per engagement · 6–8 week timeline</div>
             <Link href="/contact" className="inline-block bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
               Book an Amplify Discovery Call
             </Link>
@@ -71,11 +71,11 @@ export default function Amplify() {
               </p>
             </div>
             <div className="border border-[#1e1e1e] p-7">
-              <div className="text-[10px] font-semibold tracking-[3px] uppercase text-[#333] mb-4">What Affects Pricing</div>
+              <div className="text-[10px] font-semibold tracking-[3px] uppercase text-[#999] mb-4">What Affects Pricing</div>
               {["Number of deliverables in scope","Whether partner network coordination is required","Volume of written content included","Complexity of research or positioning work"].map(item => (
                 <div key={item} className="flex gap-2.5 py-2.5 border-b border-[#1a1a1a] last:border-b-0">
                   <span className="text-crimson font-bold flex-shrink-0">–</span>
-                  <p className="text-[13px] font-light text-[#333] leading-[1.6]">{item}</p>
+                  <p className="text-[13px] font-light text-[#aaa] leading-[1.6]">{item}</p>
                 </div>
               ))}
             </div>
@@ -153,7 +153,7 @@ export default function Amplify() {
                 <div className="text-[9px] font-semibold tracking-[3px] uppercase text-mauve mb-3">{e.tag}</div>
                 <div className="font-display font-bold text-[22px] text-ink mb-4 leading-[1.2]">{e.name}</div>
                 <p className="text-[13px] font-light text-[#444] leading-[1.75] mb-5">{e.desc}</p>
-                <div className="text-[22px] font-bold text-crimson">{e.price}</div>
+                <div className="text-[12px] font-semibold tracking-[2px] uppercase text-crimson">{e.price}</div>
               </div>
             ))}
           </div>
@@ -172,19 +172,19 @@ export default function Amplify() {
               Amplify+ <em className="font-display font-normal italic text-crimson">Ongoing</em>
             </h2>
             <div className="w-8 h-0.5 bg-crimson my-5" />
-            <p className="text-[14px] font-light text-[#444] leading-[1.9] mb-4">You built it. Now let&apos;s run it. Monthly platform management — content, new revenue streams, and brand consistency across every channel.</p>
-            <div className="text-[28px] font-bold text-white mb-1">$3,000–$5,000<span className="text-[13px] font-light text-[#444] ml-2">/ month</span></div>
-            <div className="text-[11px] font-light text-[#444] tracking-wide mb-7">Minimum 3-month commitment</div>
-            <Link href="/contact" className="inline-block bg-transparent border border-[#333] text-[#444] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
+            <p className="text-[14px] font-light text-[#aaa] leading-[1.9] mb-4">You built it. Now let&apos;s run it. Monthly platform management — content, new revenue streams, and brand consistency across every channel.</p>
+            <div className="text-[28px] font-bold text-white mb-1">$3,000–$5,000<span className="text-[13px] font-light text-[#999] ml-2">/ month</span></div>
+            <div className="text-[11px] font-light text-[#999] tracking-wide mb-7">Minimum 3-month commitment</div>
+            <Link href="/contact" className="inline-block bg-transparent border border-[#333] text-[#999] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
               Let&apos;s Talk Ongoing
             </Link>
           </div>
           <div className="border border-[#1e1e1e] p-9">
-            <div className="text-[10px] font-semibold tracking-[3px] uppercase text-[#333] mb-5">What&apos;s Included Monthly</div>
+            <div className="text-[10px] font-semibold tracking-[3px] uppercase text-[#999] mb-5">What&apos;s Included Monthly</div>
             {["Monthly strategy session — 60 minutes, agenda set by your priorities","Ongoing content production — LinkedIn, blog, newsletter, or a combination","Quarterly revenue stream review — new opportunities identified and scoped","Brand asset updates and new collateral as needed","Partner network coordination for any execution needs that arise","Priority access for new projects, launches, and time-sensitive needs"].map(item => (
               <div key={item} className="flex gap-3 py-3 border-b border-[#1a1a1a] last:border-b-0">
                 <span className="text-crimson font-bold flex-shrink-0 mt-0.5">–</span>
-                <p className="text-[13px] font-light text-[#444] leading-[1.6]">{item}</p>
+                <p className="text-[13px] font-light text-[#aaa] leading-[1.6]">{item}</p>
               </div>
             ))}
           </div>

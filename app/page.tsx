@@ -29,9 +29,10 @@ export default function Home() {
           </p>
 
           <p className="font-sans font-light text-[#aaa] leading-[1.85] max-w-[480px] mb-9 text-[15px] fade-up-delay-3">
-            For high-performing women founders and executives who are done being
-            the best-kept secret in their industry. We build the brand, the
-            platform, and the revenue streams that make you impossible to overlook.
+            For high-performing women founders who are done being the best-kept
+            secret in their industry. Qualifications packages, decks, and websites
+            that get you in the room — and the platform that keeps you there.
+            From $1,000.
           </p>
 
           <div className="flex gap-3 flex-wrap mb-12 fade-up-delay-4">
@@ -41,7 +42,7 @@ export default function Home() {
             </Link>
             <Link href="/essentials"
               className="bg-transparent border border-[#333] text-[#999] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
-              See Services
+              See Packages &amp; Pricing
             </Link>
           </div>
 
@@ -341,12 +342,18 @@ export default function Home() {
               "Six months later she's back: she wants to start posting on LinkedIn and she's been thinking about a course. That's a LinkedIn Voice Intensive and a Notable Amplify engagement.",
               "A year later, her platform is running, her course is live, and she wants ongoing support. That's Amplify+ Ongoing.",
             ].map((p, i) => (
-              <p key={i} className="text-[14px] font-light text-[#333] leading-[1.9] mb-4">{p}</p>
+              <p key={i} className="text-[14px] font-light text-[#aaa] leading-[1.9] mb-4">{p}</p>
             ))}
-            <Link href="/contact"
-              className="inline-block mt-2 bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
-              Start Your Journey
-            </Link>
+            <div className="flex gap-3 flex-wrap items-center mt-2">
+              <Link href="/contact"
+                className="inline-block bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
+                Start Your Journey
+              </Link>
+              <Link href="/results"
+                className="inline-block bg-transparent border border-[#333] text-[#999] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
+                See a 5-Year Result
+              </Link>
+            </div>
           </div>
         </div>
       </section>

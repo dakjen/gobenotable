@@ -19,7 +19,7 @@ export default function PageHero({ eyebrow, title, subtitle, dark = true }: Page
           {title}
         </h1>
         <p className="text-[15px] font-light leading-[1.8] max-w-[580px]"
-          style={{ color: dark ? "#666" : "#555" }}>
+          style={{ color: dark ? "#a0a0a0" : "#555" }}>
           {subtitle}
         </p>
       </div>

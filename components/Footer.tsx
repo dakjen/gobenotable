@@ -5,6 +5,7 @@ const pages = [
   { label: "About",      href: "/about" },
   { label: "Essentials", href: "/essentials" },
   { label: "Amplify",    href: "/amplify" },
+  { label: "Results",    href: "/results" },
   { label: "Vanguard",   href: "/vanguard" },
   { label: "Book a Call",href: "/contact" },
 ];
@@ -53,10 +54,10 @@ export default function Footer() {
             Contact
           </h5>
           <a
-            href="mailto:admin@gobenotable.com"
+            href="mailto:hello@gobenotable.com"
             className="block text-[12px] font-light text-[#777] no-underline hover:text-white transition-colors duration-200 mb-2"
           >
-            admin@gobenotable.com
+            hello@gobenotable.com
           </a>
           <a
             href="https://gobenotable.com"
@@ -74,12 +75,12 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto py-4 flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="text-[10px] font-light text-[#444]">
+        <p className="text-[10px] font-light text-[#777]">
           © 2026 Notable by DakJen Creative LLC — All Rights Reserved.
         </p>
-        <Link href="/admin" className="text-[10px] font-light text-[#2a2a2a] no-underline hover:text-[#555] transition-colors duration-200">
-          Admin Access
-        </Link>
+        <p className="text-[10px] font-light text-[#777]">
+          All prices shown are starting points.
+        </p>
       </div>
     </footer>
   );

@@ -31,8 +31,9 @@ export default function Home() {
           <p className="font-sans font-light text-[#aaa] leading-[1.85] max-w-[480px] mb-9 text-[15px] fade-up-delay-3">
             For high-performing women founders who are done being the best-kept
             secret in their industry. Qualifications packages, decks, and websites
-            that get you in the room — and the platform that keeps you there.
-            From $350.
+            that get you in the room — and a platform that makes the expertise
+            you&apos;ve always had known, monetized, and{" "}
+            <em className="font-display font-normal italic text-crimson">notable</em>. From $350.
           </p>
 
           <div className="flex gap-3 flex-wrap mb-12 fade-up-delay-4">

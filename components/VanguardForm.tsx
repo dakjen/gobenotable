@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import HoneypotFields from "@/components/HoneypotFields";
 
 export default function VanguardForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -18,6 +19,8 @@ export default function VanguardForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          company_website: data.get("company_website"),
+          rendered_at: data.get("rendered_at"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),
           email: data.get("email"),
@@ -39,6 +42,7 @@ export default function VanguardForm() {
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+      <HoneypotFields />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-2"><label className={l}>First Name</label><input name="firstName" type="text" placeholder="First name" required className={f} /></div>
         <div className="flex flex-col gap-2"><label className={l}>Last Name</label><input name="lastName" type="text" placeholder="Last name" required className={f} /></div>

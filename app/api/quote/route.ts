@@ -2,16 +2,32 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC, escapeHtml } from "@/lib/email";
 import { labelForId } from "@/lib/collateral";
+import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
 
 export async function POST(req: Request) {
   try {
-    const { firstName, lastName, email, phone, company, website, timeline, budget, details, items } = await req.json();
+    const body = await req.json();
+    const { firstName, lastName, email, phone, company, website, timeline, budget, details, items } = body;
 
     if (!firstName || !lastName || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: "Select at least one item" }, { status: 400 });
+    }
+
+    const verdict = screenSubmission({
+      honeypot: body.company_website,
+      renderedAt: body.rendered_at,
+      firstName, lastName, email, message: details,
+    });
+    if (verdict.isSpam) {
+      console.warn("Quote: dropped spam —", verdict.reason, email);
+      return NextResponse.json({ success: true });
+    }
+    if (!rateLimit(clientIp(req))) {
+      console.warn("Quote: rate limited", clientIp(req));
+      return NextResponse.json({ success: true });
     }
 
     // The email is the delivery mechanism; the row is the record. If the

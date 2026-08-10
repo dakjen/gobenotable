@@ -1,13 +1,29 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
+import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
 
 export async function POST(req: Request) {
   try {
-    const { firstName, lastName, email, phone, company, industry, workImpact, bringsOthers, linkedin, website } = await req.json();
+    const body = await req.json();
+    const { firstName, lastName, email, phone, company, industry, workImpact, bringsOthers, linkedin, website } = body;
 
     if (!firstName || !lastName || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    const verdict = screenSubmission({
+      honeypot: body.company_website,
+      renderedAt: body.rendered_at,
+      firstName, lastName, email, message: workImpact,
+    });
+    if (verdict.isSpam) {
+      console.warn("Vanguard: dropped spam —", verdict.reason, email);
+      return NextResponse.json({ success: true });
+    }
+    if (!rateLimit(clientIp(req))) {
+      console.warn("Vanguard: rate limited", clientIp(req));
+      return NextResponse.json({ success: true });
     }
 
     const sql = getDb();

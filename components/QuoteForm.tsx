@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import HoneypotFields from "@/components/HoneypotFields";
 import { collateralGroups, intensives } from "@/lib/collateral";
 
 const inputClass =
@@ -32,6 +33,8 @@ export default function QuoteForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          company_website: data.get("company_website"),
+          rendered_at: data.get("rendered_at"),
           firstName: data.get("firstName"),
           lastName: data.get("lastName"),
           email: data.get("email"),
@@ -73,6 +76,7 @@ export default function QuoteForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white border border-warm p-7 md:p-9">
+      <HoneypotFields />
       {/* Pick what you want quoted */}
       <div className="mb-8">
         <div className={labelClass}>What would you like quoted?</div>

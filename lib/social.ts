@@ -43,7 +43,7 @@ export const directContact = {
   /** Priced price sheet on the Notable site. */
   collateralUrl: "https://gobenotable.com/essentials",
   /** The one-pager showcase — actual finished work to look at. */
-  onePagersUrl: "https://www.dakjencreative.com/dcre-onepagers",
+  onePagersUrl: "https://www.dakjencreative.com/onepagers",
 };
 
 /** Headline results from the five-year engagement on /results. */

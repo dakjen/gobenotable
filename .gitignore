@@ -14,6 +14,10 @@
 # env
 .env*.local
 
+# internal strategy docs — this repo is public
+Notable_Funnel_Implementation_Plan.md
+*_Implementation_Plan.md
+
 # misc
 .DS_Store
 *.pem

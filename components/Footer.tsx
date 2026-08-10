@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const pages = [
   { label: "Home",       href: "/" },
@@ -14,7 +15,24 @@ const pages = [
 export default function Footer() {
   return (
     <footer className="bg-ink border-t border-crimson pt-12 md:pt-16 px-6 md:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-[#161616]">
+      {/* Email list */}
+      <div className="max-w-6xl mx-auto pb-12 border-b border-[#161616] grid grid-cols-1 md:grid-cols-[1fr_1.1fr] gap-8 md:gap-14 items-start">
+        <div>
+          <div className="text-[9px] font-semibold tracking-[3px] uppercase text-crimson mb-3">The Notable List</div>
+          <h3 className="font-display font-bold text-white text-[24px] md:text-[28px] leading-[1.15] mb-2">
+            Don&apos;t be the best-kept secret on <em className="font-display font-normal italic text-crimson">our</em> list either.
+          </h3>
+          <p className="text-[12px] font-light text-[#888] leading-[1.75] max-w-[380px]">
+            Notes on getting seen — what&apos;s working, what belongs in your materials, and when
+            Intensive dates open.
+          </p>
+        </div>
+        <div className="md:pt-8">
+          <NewsletterSignup tone="dark" source="footer" />
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 py-12 border-b border-[#161616]">
         {/* Brand */}
         <div>
           <div className="font-sans font-semibold text-[13px] tracking-[5px] uppercase text-white mb-1">

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL } from "@/lib/email";
+import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
 
 export async function POST(req: Request) {
   try {
@@ -41,6 +41,7 @@ export async function POST(req: Request) {
     // Internal notification — the full application, ready to act on.
     await sendEmail({
       to: NOTIFY_EMAIL,
+      cc: [NOTIFY_CC],
       subject: `Vanguard application — ${fullName}${company ? ` (${company})` : ""}`,
       replyTo: email,
       html: renderEmail({

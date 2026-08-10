@@ -15,20 +15,32 @@ const FROM_NAME = "Notable";
 /** Where internal notifications land. */
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "admin@gobenotable.com";
 
+/**
+ * Copied on every internal notification, so nothing is missed if the
+ * gobenotable.com inbox is not being watched. Client-facing confirmations
+ * are never CC'd — those stay one-to-one.
+ */
+const NOTIFY_CC = process.env.NOTIFY_CC || "dakjencreativellc@gmail.com";
+
 type SendArgs = {
   to: string;
   toName?: string;
   subject: string;
   html: string;
   replyTo?: string;
+  cc?: string[];
 };
 
-export async function sendEmail({ to, toName, subject, html, replyTo }: SendArgs): Promise<boolean> {
+export async function sendEmail({ to, toName, subject, html, replyTo, cc }: SendArgs): Promise<boolean> {
   const key = process.env.BREVO_API_KEY;
   if (!key) {
     console.error("sendEmail: BREVO_API_KEY is not set — skipping send to", to);
     return false;
   }
+
+  // Brevo rejects a cc address that duplicates the to address, and an
+  // empty cc array, so resolve the list before building the payload.
+  const ccList = (cc ?? []).filter((a) => a.toLowerCase() !== to.toLowerCase());
 
   try {
     const res = await fetch(BREVO_ENDPOINT, {
@@ -41,6 +53,7 @@ export async function sendEmail({ to, toName, subject, html, replyTo }: SendArgs
       body: JSON.stringify({
         sender: { name: FROM_NAME, email: FROM_EMAIL },
         to: [{ email: to, ...(toName ? { name: toName } : {}) }],
+        ...(ccList.length ? { cc: ccList.map((email) => ({ email })) } : {}),
         subject,
         htmlContent: html,
         ...(replyTo ? { replyTo: { email: replyTo } } : {}),
@@ -199,4 +212,4 @@ function escapeAttr(value: string): string {
   return escapeHtml(value);
 }
 
-export { NOTIFY_EMAIL };
+export { NOTIFY_EMAIL, NOTIFY_CC };

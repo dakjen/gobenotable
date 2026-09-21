@@ -18,7 +18,11 @@ const phases = [
   { n:"04", t:"Ongoing Management", b:"Monthly content and brand management through Amplify+ Ongoing — so your platform never falls behind your ambition." },
 ];
 
-export const metadata = { title: "About — Notable by DakJen Creative LLC" };
+export const metadata = {
+  title: "About — Notable by DakJen Creative LLC",
+  description: 'Notable is a brand, platform, and revenue buildout for high-performing women founders, led by Dakotah Jennifer of DakJen Creative LLC. We execute, not just advise: you leave with finished assets in hand.',
+  alternates: { canonical: "/about" },
+};
 
 export default function About() {
   return (

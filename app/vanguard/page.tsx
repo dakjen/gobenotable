@@ -3,7 +3,11 @@ import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import VanguardForm from "@/components/VanguardForm";
 
-export const metadata = { title: "Notable Vanguard — For Men Who Lead at the Highest Level" };
+export const metadata = {
+  title: "Notable Vanguard — For Men Who Lead at the Highest Level",
+  description: 'Notable Vanguard is an application-only program for men of color operating at the top of their craft. Every application is reviewed personally.',
+  alternates: { canonical: "/vanguard" },
+};
 
 const pillars = [
   { n:"01", t:"Exceptional at What They Do", b:"A Vanguard man is at the top of his field — not by accident, but through years of discipline, craft, and relentless commitment. Excellence is not the goal. It is the baseline." },

@@ -10,7 +10,7 @@ const DESCRIPTION =
   "Notable builds the qualifications packages, decks, and websites that get women founders in the room — and the platform that makes the expertise they already had known, monetized, and notable. Collateral priced by the piece from $350; platform buildout from $4,000. A brand of DakJen Creative LLC.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gobenotable.com"),
+  metadataBase: new URL("https://www.gobenotable.com"),
   title: {
     default: "Notable — Go Be Notable. We'll Do The Rest.",
     template: "%s · Notable",
@@ -25,11 +25,13 @@ export const metadata: Metadata = {
     "personal brand platform",
     "thought leadership buildout",
   ],
-  authors: [{ name: "DakJen Creative LLC", url: "https://gobenotable.com" }],
+  authors: [{ name: "DakJen Creative LLC", url: "https://www.gobenotable.com" }],
   creator: "DakJen Creative LLC",
   publisher: "DakJen Creative LLC",
-  alternates: { canonical: "/" },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }, { url: "/icon-512.png", sizes: "512x512", type: "image/png" }],
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -39,14 +41,16 @@ export const metadata: Metadata = {
     type: "website",
     title: "Notable — Go Be Notable. We'll Do The Rest.",
     description: DESCRIPTION,
-    url: "https://gobenotable.com",
+    url: "https://www.gobenotable.com",
     siteName: "Notable",
     locale: "en_US",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Notable — Go Be Notable. We'll Do The Rest." }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Notable — Go Be Notable. We'll Do The Rest.",
     description: DESCRIPTION,
+    images: ["/og.png"],
   },
 };
 
@@ -60,11 +64,11 @@ const structuredData = {
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": "https://gobenotable.com/#organization",
+      "@id": "https://www.gobenotable.com/#organization",
       name: "Notable",
       alternateName: "Notable by DakJen Creative LLC",
       description: DESCRIPTION,
-      url: "https://gobenotable.com",
+      url: "https://www.gobenotable.com",
       email: "admin@gobenotable.com",
       slogan: "Go Be Notable. We'll Do The Rest.",
       parentOrganization: { "@type": "Organization", name: "DakJen Creative LLC" },
@@ -107,17 +111,17 @@ const structuredData = {
             valueAddedTaxIncluded: false,
           },
           availability: "https://schema.org/InStock",
-          url: "https://gobenotable.com/quote",
+          url: "https://www.gobenotable.com/quote",
         })),
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://gobenotable.com/#website",
-      url: "https://gobenotable.com",
+      "@id": "https://www.gobenotable.com/#website",
+      url: "https://www.gobenotable.com",
       name: "Notable",
       description: DESCRIPTION,
-      publisher: { "@id": "https://gobenotable.com/#organization" },
+      publisher: { "@id": "https://www.gobenotable.com/#organization" },
       inLanguage: "en-US",
     },
   ],
@@ -131,6 +135,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

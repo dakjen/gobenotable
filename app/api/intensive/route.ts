@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC } from "@/lib/email";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { validEmail, tooLong } from "@/lib/validate";
 import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
@@ -11,6 +12,13 @@ export async function POST(req: Request) {
 
     if (!firstName || !lastName || !email || !tier) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+    if (!validEmail(email)) {
+      return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    }
+    const over = tooLong({ firstName, lastName, email, phone, company, tier, preferredDate, website, businessDescription, goals }, ["businessDescription", "goals"]);
+    if (over) {
+      return NextResponse.json({ error: "One of the fields is too long. Please shorten it and try again." }, { status: 400 });
     }
 
     const verdict = screenSubmission({

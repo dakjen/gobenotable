@@ -63,3 +63,28 @@ export async function subscribeToList({ email, firstName, lastName, source }: Su
     return "failed";
   }
 }
+
+/** Removes a contact from the list. True when Brevo confirms, or when the address was never on it. */
+export async function removeFromList(email: string): Promise<boolean> {
+  const key = process.env.BREVO_API_KEY;
+  if (!key) {
+    console.error("removeFromList: BREVO_API_KEY is not set");
+    return false;
+  }
+  try {
+    const res = await fetch(`https://api.brevo.com/v3/contacts/lists/${LIST_ID}/contacts/remove`, {
+      method: "POST",
+      headers: { "api-key": key, "Content-Type": "application/json", accept: "application/json" },
+      body: JSON.stringify({ emails: [email] }),
+    });
+    if (res.ok) return true;
+    const text = await res.text();
+    // Not on the list is the outcome the person wanted anyway.
+    if (res.status === 400 && /not.*(found|in list|exist)/i.test(text)) return true;
+    console.error("removeFromList: Brevo rejected", res.status, text);
+    return false;
+  } catch (error) {
+    console.error("removeFromList: request failed", error);
+    return false;
+  }
+}

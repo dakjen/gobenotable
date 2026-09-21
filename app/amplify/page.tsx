@@ -3,7 +3,11 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
-export const metadata = { title: "Notable Amplify — Platform & Revenue Stream Buildout" };
+export const metadata = {
+  title: "Notable Amplify — Platform & Revenue Stream Buildout",
+  description: 'Notable Amplify builds your platform and revenue streams: online courses, book proposals, LinkedIn presence, newsletters, and speaking series. Custom-scoped from $4,000 over 6–8 weeks.',
+  alternates: { canonical: "/amplify" },
+};
 
 const phases = [
   { n:"01", t:"Platform Assessment", b:"Deep-dive interview, audit of existing brand assets, review of current revenue streams. We identify 3–5 monetizable opportunities specific to you.", weeks:"Weeks 1–2" },

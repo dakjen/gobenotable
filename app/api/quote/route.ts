@@ -3,6 +3,7 @@ import { getDb } from "@/lib/db";
 import { sendEmail, renderEmail, p, detailTable, NOTIFY_EMAIL, NOTIFY_CC, escapeHtml } from "@/lib/email";
 import { labelForId } from "@/lib/collateral";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { validEmail, tooLong } from "@/lib/validate";
 import { attributionFromPayload, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: Request) {
@@ -12,6 +13,13 @@ export async function POST(req: Request) {
 
     if (!firstName || !lastName || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+    if (!validEmail(email)) {
+      return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    }
+    const over = tooLong({ firstName, lastName, email, phone, company, website, timeline, budget, details }, ["details"]);
+    if (over) {
+      return NextResponse.json({ error: "One of the fields is too long. Please shorten it and try again." }, { status: 400 });
     }
     if (!Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: "Select at least one item" }, { status: 400 });

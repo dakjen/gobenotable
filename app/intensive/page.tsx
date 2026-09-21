@@ -1,7 +1,11 @@
 import PageHero from "@/components/PageHero";
 import IntensiveForm from "@/components/IntensiveForm";
 
-export const metadata = { title: "Book Your 24-Hour Brand Intensive — Notable" };
+export const metadata = {
+  title: "Book Your 24-Hour Brand Intensive — Notable",
+  description: 'The 24-Hour Brand Intensive: a one-hour kickoff, then 24 hours of build. Website, branded templates, and 30 days of LinkedIn content from $1,750. Two per month.',
+  alternates: { canonical: "/intensive" },
+};
 
 export default function Intensive() {
   return (

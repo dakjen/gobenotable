@@ -12,6 +12,11 @@ const pages = [
   { label: "Book a Call",href: "/contact" },
 ];
 
+const legal = [
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-ink border-t border-crimson pt-12 md:pt-16 px-6 md:px-16">
@@ -41,7 +46,7 @@ export default function Footer() {
           <div className="text-[11px] font-light italic text-mauve mb-4">
             Go Be Notable. We&apos;ll Do The Rest.
           </div>
-          <p className="text-[11px] font-light text-[#555] leading-relaxed">
+          <p className="text-[11px] font-light text-[#888] leading-relaxed">
             DakJen Creative LLC dba Notable Services<br />
             Serving high-performing women founders,<br />
             executives, and leaders.
@@ -93,12 +98,24 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto py-4 flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="text-[10px] font-light text-[#777]">
+      <div className="max-w-6xl mx-auto py-4 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
+        <p className="text-[10px] font-light text-[#888]">
           © 2026 DakJen Creative LLC dba Notable Services — All Rights Reserved.
+          {legal.map((l) => (
+            <span key={l.href}>
+              <span className="mx-2 text-[#444]">·</span>
+              <Link href={l.href} className="text-[#888] no-underline hover:text-white transition-colors duration-200">{l.label}</Link>
+            </span>
+          ))}
         </p>
-        <p className="text-[10px] font-light text-[#777]">
+        <p className="text-[10px] font-light text-[#888]">
           All prices shown are starting points.
+        </p>
+      </div>
+      <div className="max-w-6xl mx-auto pb-5">
+        <p className="text-[10px] font-light text-[#666] text-center md:text-left">
+          This site uses Vercel Web Analytics, which is cookieless and does not identify you.{" "}
+          <Link href="/privacy" className="text-[#888] underline hover:text-white transition-colors duration-200">How we handle your data.</Link>
         </p>
       </div>
     </footer>

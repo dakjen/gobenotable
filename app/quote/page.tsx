@@ -1,7 +1,11 @@
 import PageHero from "@/components/PageHero";
 import QuoteForm from "@/components/QuoteForm";
 
-export const metadata = { title: "Request a Quote — Notable" };
+export const metadata = {
+  title: "Request a Quote — Notable",
+  description: 'Pick the pieces you want priced and get an itemized quote within one business day. No call required.',
+  alternates: { canonical: "/quote" },
+};
 
 const steps = [
   { n: "01", t: "Pick your pieces", b: "Tick everything you want priced. One document or the whole kit." },

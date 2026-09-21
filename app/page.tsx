@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <div>
@@ -108,7 +110,7 @@ export default function Home() {
                 className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:bg-crimson2 transition-colors duration-200">
                 Book Your Intensive
               </Link>
-              <span className="text-[10px] font-light text-[#555]">
+              <span className="text-[10px] font-light text-[#888]">
                 50% deposit to reserve
               </span>
             </div>

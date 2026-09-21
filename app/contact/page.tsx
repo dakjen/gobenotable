@@ -2,7 +2,11 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = { title: "Book a Discovery Call — Notable" };
+export const metadata = {
+  title: "Book a Discovery Call — Notable",
+  description: "Book a 45-minute discovery call with Notable. We'll map your platform, identify your opportunities, and show you exactly what we'd build.",
+  alternates: { canonical: "/contact" },
+};
 
 const steps = [
   { n: "01", t: "We listen",    b: "Tell us what you've built, what you're working toward, and what's been getting in the way." },

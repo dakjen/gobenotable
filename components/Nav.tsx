@@ -55,7 +55,15 @@ export default function Nav() {
           </li>
         </ul>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile: CTA stays reachable without opening the menu */}
+        <div className="md:hidden flex items-center gap-3">
+          <Link
+            href="/contact"
+            onClick={() => setOpen(false)}
+            className="text-[9px] font-semibold tracking-[2px] uppercase text-white bg-crimson px-3.5 py-2 no-underline hover:bg-crimson2 transition-colors duration-200"
+          >
+            Book a Call
+          </Link>
         <button
           className="md:hidden flex flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer"
           onClick={() => setOpen(!open)}
@@ -65,6 +73,7 @@ export default function Nav() {
           <span className={`block w-5 h-[1.5px] bg-white transition-all duration-200 ${open ? "opacity-0" : ""}`} />
           <span className={`block w-5 h-[1.5px] bg-white transition-all duration-200 ${open ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

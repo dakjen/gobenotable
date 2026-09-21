@@ -84,7 +84,7 @@ export default function NewsletterSignup({ tone = "dark", source = "site" }: Pro
         </button>
       </div>
       {status === "error" && <p className="text-[11px] text-crimson mt-2">{message}</p>}
-      <p className={`text-[10px] font-light mt-2.5 leading-[1.6] ${dark ? "text-[#666]" : "text-mid"}`}>
+      <p className={`text-[10px] font-light mt-2.5 leading-[1.6] ${dark ? "text-[#888]" : "text-[#666]"}`}>
         Occasional notes on getting seen, and first word on new Intensive dates. Unsubscribe any time.
       </p>
     </form>

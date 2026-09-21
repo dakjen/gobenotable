@@ -3,6 +3,7 @@ import { subscribeToList } from "@/lib/newsletter";
 import { sendEmail, renderEmail, p, statRow, linkList, subhead } from "@/lib/email";
 import { activeSocialLinks, directContact, proofStats } from "@/lib/social";
 import { screenSubmission, rateLimit, clientIp } from "@/lib/spam";
+import { unsubscribeUrl } from "@/lib/unsubscribe";
 
 export async function POST(req: Request) {
   try {
@@ -40,6 +41,7 @@ export async function POST(req: Request) {
     // Only welcome genuinely new subscribers, so a second signup does not
     // send a duplicate.
     if (result === "subscribed") {
+      const unsub = unsubscribeUrl(email);
       const reachMe = [
         { label: "Email me", url: `mailto:${directContact.email}`, blurb: directContact.email },
         directContact.textNumber
@@ -59,6 +61,10 @@ export async function POST(req: Request) {
         to: email,
         toName: typeof firstName === "string" ? firstName : undefined,
         subject: "Thanks for reaching out — here's more of us",
+        headers: {
+          "List-Unsubscribe": `<${unsub}>, <mailto:admin@gobenotable.com?subject=unsubscribe>`,
+          "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+        },
         html: renderEmail({
           preheader: "We'll be in touch. In the meantime, here's where to look around.",
           eyebrow: "Thanks for Your Interest",
@@ -75,6 +81,7 @@ export async function POST(req: Request) {
             subhead("Or just reach out directly") +
             linkList(reachMe),
           signoff: "You've done the work. Now let your brand prove it.",
+          unsubscribeUrl: unsub,
         }),
       });
     }

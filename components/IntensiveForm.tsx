@@ -5,6 +5,7 @@ import { getAttribution } from "@/lib/attribution";
 
 export default function IntensiveForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
   const f = "bg-white border border-warm text-ink font-sans text-[13px] font-light px-4 py-3.5 outline-none transition-all duration-200 focus:border-crimson w-full resize-none appearance-none placeholder:text-[#bbb]";
@@ -13,6 +14,7 @@ export default function IntensiveForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
+    setFailed(false);
     const form = e.currentTarget;
     const data = new FormData(form);
 
@@ -55,8 +57,9 @@ export default function IntensiveForm() {
         }),
       });
       if (res.ok) setSubmitted(true);
+      else setFailed(true);
     } catch {
-      setSubmitted(true);
+      setFailed(true);
     }
     setSubmitting(false);
   }
@@ -74,6 +77,11 @@ export default function IntensiveForm() {
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <HoneypotFields />
+      {failed && (
+        <p role="alert" className="text-[12px] text-crimson border border-crimson/30 bg-crimson/5 px-4 py-3">
+          That didn&apos;t go through. Try again, or email <a href="mailto:admin@gobenotable.com" className="underline">admin@gobenotable.com</a> and we&apos;ll pick it up from there.
+        </p>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-2"><label className={l}>First Name</label><input name="firstName" type="text" placeholder="First name" required className={f} /></div>
         <div className="flex flex-col gap-2"><label className={l}>Last Name</label><input name="lastName" type="text" placeholder="Last name" required className={f} /></div>
@@ -98,7 +106,7 @@ export default function IntensiveForm() {
       <div className="flex flex-col gap-2">
         <label className={l}>Preferred Intensive Date</label>
         <input name="preferredDate" type="date" required className={f} />
-        <p className="text-[11px] font-light text-[#999] -mt-1">We book 2 per month. We&apos;ll confirm availability after you submit.</p>
+        <p className="text-[11px] font-light text-[#666] -mt-1">We book 2 per month. We&apos;ll confirm availability after you submit.</p>
       </div>
       <div className="flex flex-col gap-2">
         <label className={l}>Tell Us About Your Business</label>
@@ -110,7 +118,7 @@ export default function IntensiveForm() {
       </div>
       <div className="flex flex-col gap-2">
         <label className={l}>Upload Brand Materials (Optional)</label>
-        <p className="text-[11px] font-light text-[#999] -mt-1">Logos, quals packages, pitch decks, headshots, brand guidelines — anything you have. PDF, PNG, JPG, DOCX accepted.</p>
+        <p className="text-[11px] font-light text-[#666] -mt-1">Logos, quals packages, pitch decks, headshots, brand guidelines — anything you have. PDF, PNG, JPG, DOCX accepted.</p>
         <input
           type="file"
           multiple

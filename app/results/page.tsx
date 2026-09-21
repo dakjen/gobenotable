@@ -3,7 +3,11 @@ import CtaBand from "@/components/CtaBand";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = { title: "Client Results — Notable" };
+export const metadata = {
+  title: "Client Results — Notable",
+  description: 'Inside two Notable engagements for Dr. Gina Merritt: Ground Up, a course and community platform built and delivered, and a five-year platform buildout that grew her LinkedIn network 237%.',
+  alternates: { canonical: "/results" },
+};
 
 const stats = [
   { n: "+237%", l: "LinkedIn Network Growth" },
@@ -262,7 +266,7 @@ export default function Results() {
             ].map((s) => (
               <div key={s.l} className="border-l border-[#333] pl-5">
                 <div className="font-display font-bold text-white text-[24px] leading-none">{s.n}</div>
-                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#666] mt-2">{s.l}</div>
+                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#888] mt-2">{s.l}</div>
               </div>
             ))}
           </div>
@@ -328,7 +332,7 @@ export default function Results() {
               <div className="w-full h-[3px] bg-warm mb-1 relative">
                 <div className="absolute left-0 top-0 h-full bg-[#ccc]" style={{ width: "9%" }} />
               </div>
-              <p className="text-[10px] font-light text-[#999] mb-5">8+ years, no strategy</p>
+              <p className="text-[10px] font-light text-[#666] mb-5">8+ years, no strategy</p>
 
               <div className="flex justify-between items-end mb-3">
                 <span className="text-[10px] font-semibold tracking-[3px] uppercase text-crimson">During</span>
@@ -337,7 +341,7 @@ export default function Results() {
               <div className="w-full h-[3px] bg-warm mb-1 relative">
                 <div className="absolute left-0 top-0 h-full bg-crimson" style={{ width: "100%" }} />
               </div>
-              <p className="text-[10px] font-light text-[#999]">4 years, Notable content management</p>
+              <p className="text-[10px] font-light text-[#666]">4 years, Notable content management</p>
             </div>
           </div>
 

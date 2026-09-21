@@ -3,7 +3,11 @@ import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
-export const metadata = { title: "Notable Essentials — Brand Collateral, Priced by the Piece" };
+export const metadata = {
+  title: "Notable Essentials — Brand Collateral, Priced by the Piece",
+  description: 'Brand collateral priced by the piece: one-pagers from $350, capabilities packages from $2,000, pitch decks, bios, proposals, and brand guides. Two rounds of revisions, 1–4 week turnaround.',
+  alternates: { canonical: "/essentials" },
+};
 
 const groups = [
   {
@@ -103,7 +107,7 @@ export default function Essentials() {
             <div key={g.heading} className="mb-10 last:mb-0">
               <div className="flex items-baseline gap-3 mb-1 pb-3 border-b-[2px] border-ink">
                 <h3 className="font-display font-bold text-ink text-[20px] md:text-[24px]">{g.heading}</h3>
-                {g.note && <span className="text-[11px] font-light italic text-mid">{g.note}</span>}
+                {g.note && <span className="text-[11px] font-light italic text-[#666]">{g.note}</span>}
               </div>
               {g.items.map((row) => (
                 <div key={row.item} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4 border-b border-warm">
@@ -178,7 +182,7 @@ export default function Essentials() {
         <p className="text-[13px] font-light text-[#444] leading-[1.7] max-w-[380px]">
           For existing clients — qual package updates, deck graphics, website updates. Complete overhauls scoped separately.
         </p>
-        <div className="text-[28px] font-bold text-crimson whitespace-nowrap">$150 <span className="text-[13px] font-light text-mid">/ service</span></div>
+        <div className="text-[28px] font-bold text-crimson whitespace-nowrap">$150 <span className="text-[13px] font-light text-[#666]">/ service</span></div>
         <Link href="/contact" className="bg-crimson text-white text-[10px] font-semibold tracking-[2.5px] uppercase px-6 py-3 no-underline hover:bg-crimson2 transition-colors duration-200">
           Add On
         </Link>

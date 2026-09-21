@@ -35,7 +35,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/", disallow },
       ...AI_AGENTS.map((userAgent) => ({ userAgent, allow: "/", disallow })),
     ],
-    sitemap: "https://gobenotable.com/sitemap.xml",
-    host: "https://gobenotable.com",
+    sitemap: "https://www.gobenotable.com/sitemap.xml",
+    host: "https://www.gobenotable.com",
   };
 }

@@ -29,9 +29,11 @@ type SendArgs = {
   html: string;
   replyTo?: string;
   cc?: string[];
+  /** Extra SMTP headers, e.g. List-Unsubscribe for list mail. */
+  headers?: Record<string, string>;
 };
 
-export async function sendEmail({ to, toName, subject, html, replyTo, cc }: SendArgs): Promise<boolean> {
+export async function sendEmail({ to, toName, subject, html, replyTo, cc, headers }: SendArgs): Promise<boolean> {
   const key = process.env.BREVO_API_KEY;
   if (!key) {
     console.error("sendEmail: BREVO_API_KEY is not set — skipping send to", to);
@@ -57,6 +59,7 @@ export async function sendEmail({ to, toName, subject, html, replyTo, cc }: Send
         subject,
         htmlContent: html,
         ...(replyTo ? { replyTo: { email: replyTo } } : {}),
+        ...(headers ? { headers } : {}),
       }),
     });
 
@@ -89,6 +92,8 @@ type LayoutArgs = {
   body: string;
   cta?: { label: string; url: string };
   signoff?: string;
+  /** Present on list mail only; transactional confirmations never carry one. */
+  unsubscribeUrl?: string;
 };
 
 /**
@@ -104,6 +109,7 @@ export function renderEmail({
   body,
   cta,
   signoff,
+  unsubscribeUrl,
 }: LayoutArgs): string {
   const c = PALETTE[brand];
   const wordmark = brand === "vanguard" ? "Notable&nbsp;Vanguard" : "Notable";
@@ -161,8 +167,12 @@ export function renderEmail({
           <tr>
             <td style="background:#0F0F0F;padding:24px 34px;">
               <div style="font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.8;color:#777777;">
-                Notable &middot; a brand of DakJen Creative LLC<br>
-                <a href="https://gobenotable.com" style="color:#999999;text-decoration:none;">gobenotable.com</a>
+                Notable &middot; DakJen Creative LLC dba Notable Services<br>
+                <a href="https://www.gobenotable.com" style="color:#999999;text-decoration:none;">gobenotable.com</a>${
+                  unsubscribeUrl
+                    ? `<br><a href="${escapeHtml(unsubscribeUrl)}" style="color:#999999;text-decoration:underline;">Unsubscribe</a> from these emails in one click.`
+                    : ""
+                }
               </div>
               <div style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:11px;color:${c.accent === "#1E3A6E" ? "#5a7ab0" : "#7B4F5E"};padding-top:10px;">
                 &ldquo;You&rsquo;ve done the work. Now let your brand prove it.&rdquo;

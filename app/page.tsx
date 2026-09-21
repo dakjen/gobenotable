@@ -330,8 +330,8 @@ export default function Home() {
             </div>
             <h2 className="font-display font-black text-white leading-[1.05] tracking-[-1px]"
               style={{ fontSize: "clamp(32px,5vw,52px)" }}>
-              She Comes for<br />a Qual Package.<br />
-              <em className="font-display font-normal italic text-crimson">She Stays for<br />the Platform.</em>
+              Start With<br />One Deliverable.<br />
+              <em className="font-display font-normal italic text-crimson">Grow Into<br />a Platform.</em>
             </h2>
             <div className="relative w-full aspect-[3/4] max-w-[320px] mt-10 overflow-hidden hidden md:block">
               <Image src="/images/confident-red.jpg" alt="Confident woman founder" fill className="object-cover" sizes="320px" />
@@ -352,7 +352,7 @@ export default function Home() {
               </Link>
               <Link href="/results"
                 className="inline-block bg-transparent border border-[#333] text-[#999] text-[10px] font-semibold tracking-[2.5px] uppercase px-7 py-3.5 no-underline hover:border-[#666] hover:text-white transition-colors duration-200">
-                See a 5-Year Result
+                See the Results
               </Link>
             </div>
           </div>

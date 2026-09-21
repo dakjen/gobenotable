@@ -161,7 +161,7 @@ export default function About() {
       <section className="bg-white py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-16 items-center">
           <div className="relative w-full max-w-[280px] aspect-[3/4] overflow-hidden mx-auto md:mx-0">
-            <Image src="/images/headshot-founder.png" alt="Dakotah Jennifer — Founder of Notable" fill className="object-cover object-top" sizes="280px" />
+            <Image src="/images/headshot-founder.jpg" alt="Dakotah Jennifer — Founder of Notable" fill className="object-cover object-top" sizes="280px" />
           </div>
           <div>
             <div className="flex items-center gap-2.5 mb-4">

@@ -1,5 +1,7 @@
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = { title: "Client Results — Notable" };
 
@@ -79,7 +81,7 @@ export default function Results() {
       <PageHero
         eyebrow="Client Results"
         title={<>The Work <em className="font-display font-normal italic text-crimson">Speaks.</em></>}
-        subtitle="We don't share names without permission. But we do share what happened. Here's a look inside a 5-year Notable engagement — from first deliverable to full platform."
+        subtitle="Shared with our client's permission. Two looks inside the work for Dr. Gina Merritt: a five-year engagement that built her platform from first deliverable to full presence, and Ground Up — the course and community platform we built and delivered."
       />
 
       {/* CASE STUDY INTRO */}
@@ -87,7 +89,7 @@ export default function Results() {
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2.5 mb-4">
             <span className="block w-4 h-px bg-crimson" />
-            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">5-Year Engagement</span>
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Project One · 5-Year Engagement</span>
           </div>
           <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3"
             style={{ fontSize: "clamp(28px,3.5vw,44px)" }}>
@@ -105,6 +107,46 @@ export default function Results() {
             She arrived as a best-kept secret. She left{" "}
             <em className="italic text-crimson">impossible to overlook.</em>
           </p>
+        </div>
+      </section>
+
+      {/* THE SITE TODAY */}
+      <section className="bg-bone py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="block w-4 h-px bg-crimson" />
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">After</span>
+          </div>
+          <h2 className="font-display font-bold text-ink leading-[1.1] tracking-[-0.5px] mb-3"
+            style={{ fontSize: "clamp(24px,3vw,38px)" }}>
+            drginamerritt.net,{" "}
+            <em className="font-display font-normal italic text-crimson">As It Stands Today.</em>
+          </h2>
+          <p className="text-[14px] font-light text-[#444] leading-[1.85] max-w-2xl mb-10">
+            Her site didn&apos;t exist when we started. Today it carries her story, her numbers, and a booking page that turns a consultation request into a paid, scheduled session — on desktop and on a phone.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-6 items-start">
+            <div className="flex flex-col gap-6">
+              {[
+                { src: "/images/about.png", alt: "Dr. Gina Merritt website — About page", w: 2880, h: 1800, cap: "About — her story, told at the caliber of her career" },
+                { src: "/images/booking.png", alt: "Dr. Gina Merritt website — Book Dr. Merritt page", w: 2880, h: 2000, cap: "Book Dr. Merritt — paid consultations, scheduled on the spot" },
+              ].map((shot) => (
+                <figure key={shot.src}>
+                  <div className="border border-warm bg-white shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)]">
+                    <Image src={shot.src} alt={shot.alt} width={shot.w} height={shot.h} className="w-full h-auto" sizes="(max-width: 768px) 100vw, 700px" />
+                  </div>
+                  <figcaption className="text-[10px] font-medium tracking-[2px] uppercase text-mauve mt-3">{shot.cap}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <figure className="mx-auto md:mx-0 w-full max-w-[260px]">
+              <div className="border border-warm bg-white shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)]">
+                <Image src="/images/mobile-booking.png" alt="Dr. Gina Merritt website — booking page on mobile" width={1170} height={2532} className="w-full h-auto" sizes="260px" />
+              </div>
+              <figcaption className="text-[10px] font-medium tracking-[2px] uppercase text-mauve mt-3">Booking on mobile</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -318,12 +360,92 @@ export default function Results() {
         </div>
       </section>
 
+      {/* GROUND UP */}
+      <section className="bg-ink py-14 md:py-20 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-center gap-2.5 mb-4">
+            <span className="block w-4 h-px bg-crimson" />
+            <span className="text-[10px] font-semibold tracking-[4px] uppercase text-crimson">Project Two · Ground Up</span>
+          </div>
+          <h2 className="font-display font-bold text-white leading-[1.1] tracking-[-0.5px] mb-3"
+            style={{ fontSize: "clamp(28px,3.5vw,44px)" }}>
+            A Course and Community Platform.{" "}
+            <em className="font-display font-normal italic text-crimson">Built and Delivered.</em>
+          </h2>
+          <div className="w-8 h-0.5 bg-crimson my-5" />
+          <p className="text-[14px] font-light text-[#aaa] leading-[1.9] max-w-3xl mb-4">
+            Thirty years of deal experience is worth more than a speaking fee. Ground Up turns Dr. Merritt&apos;s expertise into a product: a members-only curriculum for underrepresented real estate developers, a community built around it, and a direct line to her for members with a live deal.
+          </p>
+          <p className="text-[14px] font-light text-[#aaa] leading-[1.9] max-w-3xl mb-10">
+            Notable scoped it, designed it, built it, and handed it over running — courses loaded, payments live, members onboarding. This is what a new line of business looks like when it ships.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { n: "7", l: "Course Stages" },
+              { n: "4", l: "Membership Tiers" },
+              { n: "1", l: "Platform, End to End" },
+              { n: "2026", l: "Built & Launched" },
+            ].map((s) => (
+              <div key={s.l} className="border-l-2 border-crimson pl-5">
+                <div className="font-display font-bold text-white text-[32px] md:text-[40px] leading-none">{s.n}</div>
+                <div className="text-[10px] font-medium tracking-[2.5px] uppercase text-[#888] mt-2">{s.l}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              { src: "/images/groundup-home.png", alt: "Ground Up by Dr. Gina Merritt — home page", cap: "Home — Build Wealth. Build Legacy. Build Home." },
+              { src: "/images/groundup-about.png", alt: "Ground Up — case studies page", cap: "Case studies — these aren't theories, they're addresses" },
+              { src: "/images/groundup-waitlist.png", alt: "Ground Up — launch waitlist with countdown", cap: "Waitlist — countdown to launch, with a plan recommendation" },
+              { src: "/images/groundup-lunch-learn.png", alt: "Ground Up — Lunch & Learn live sessions page", cap: "Lunch & Learn — paid live sessions, the front door to membership" },
+            ].map((shot) => (
+              <figure key={shot.src}>
+                <div className="border border-[#2a2a2a]">
+                  <Image src={shot.src} alt={shot.alt} width={1440} height={900} className="w-full h-auto" sizes="(max-width: 768px) 100vw, 480px" />
+                </div>
+                <figcaption className="text-[10px] font-medium tracking-[2px] uppercase text-[#777] mt-3">{shot.cap}</figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+            {[
+              { cat: "Courses", items: ["A seven-stage development curriculum — from finding and controlling a deal to financing, building, and operating it", "Lessons, recordings, and downloadable tools gated to members, with single-course and all-access passes"] },
+              { cat: "Community", items: ["Tiered membership: read, post, and — at the top — message Dr. Merritt directly about a live deal", "Opportunity board, office hours, lunch & learns, and advisory calls that unlock as members stay"] },
+              { cat: "Revenue", items: ["Four memberships plus one-time purchases, passes, and a paid project intake that feeds a retainer", "Stripe billing, coupons, and annual plans — every tier change driven by payment, never by hand"] },
+              { cat: "Operations", items: ["Waitlist with a plan recommendation engine that matches each applicant to the right tier", "Team dashboard for contacts, deal leads, member management, and transactional email"] },
+            ].map((b) => (
+              <div key={b.cat} className="bg-[#1a1a1a] p-6">
+                <div className="text-[10px] font-semibold tracking-[3px] uppercase text-crimson mb-4">{b.cat}</div>
+                <ul className="space-y-3">
+                  {b.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="text-crimson text-xs mt-0.5 flex-shrink-0">—</span>
+                      <span className="text-[12px] font-light text-[#aaa] leading-[1.75]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link href="https://community.drginamerritt.net" target="_blank" rel="noopener noreferrer"
+              className="inline-block text-[10px] font-semibold tracking-[3px] uppercase text-white border-b border-crimson pb-1 hover:text-crimson transition-colors">
+              Visit Ground Up →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* SUMMARY QUOTE */}
       <section className="bg-white py-14 md:py-20 px-6 md:px-16">
         <div className="max-w-3xl mx-auto text-center">
           <span className="font-display text-[72px] text-crimson leading-none opacity-20 select-none">&ldquo;</span>
           <p className="font-display italic text-ink text-[20px] md:text-[24px] leading-[1.5] -mt-8 mb-6">
-            She arrived as a recognized expert with a limited digital footprint. She left with a platform that matches her impact — a website, a LinkedIn presence connected to capital sources and policymakers, and a content archive that proves her expertise over five years.
+            She arrived as a recognized expert with a limited digital footprint. She left with a platform that matches her impact — a website, a LinkedIn presence connected to capital sources and policymakers, a content archive that proves her expertise, and in Ground Up, a business that sells it.
           </p>
           <div className="w-8 h-[1.5px] bg-crimson mx-auto mb-4" />
           <div className="text-[10px] font-semibold tracking-[3px] uppercase text-mauve">

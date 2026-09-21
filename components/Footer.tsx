@@ -42,7 +42,7 @@ export default function Footer() {
             Go Be Notable. We&apos;ll Do The Rest.
           </div>
           <p className="text-[11px] font-light text-[#555] leading-relaxed">
-            A brand of DakJen Creative LLC<br />
+            DakJen Creative LLC dba Notable Services<br />
             Serving high-performing women founders,<br />
             executives, and leaders.
           </p>
@@ -95,7 +95,7 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto py-4 flex flex-col md:flex-row justify-between items-center gap-2">
         <p className="text-[10px] font-light text-[#777]">
-          © 2026 Notable by DakJen Creative LLC — All Rights Reserved.
+          © 2026 DakJen Creative LLC dba Notable Services — All Rights Reserved.
         </p>
         <p className="text-[10px] font-light text-[#777]">
           All prices shown are starting points.
